@@ -3,7 +3,7 @@ runtime:
 
 site:
   title: Template Tutorial
-  url: https://redhat-scholars.github.io/course-template
+  url: https://github.com/rhcs-workshops/summit-connect-madrid-ilab
   start_page: template-tutorial::index.adoc
 
 content:
