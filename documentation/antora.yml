@@ -1,5 +1,5 @@
-name: template-tutorial
-title: Template Tutorial
+name: instructlab
+title: Instructlab
 version: master
 nav:
   - modules/ROOT/nav.adoc

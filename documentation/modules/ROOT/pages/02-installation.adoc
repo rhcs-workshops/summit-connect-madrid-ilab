@@ -1,0 +1,23 @@
+= Instalación de InstructLab
+
+== Requisitos del sistema
+
+* Python 3.9+
+* 60GB de espacio en disco
+
+== Instalación del entorno
+
+[source,bash]
+----
+cd ~/instructlab
+source venv/bin/activate
+pip install git+https://github.com/instructlab/instructlab.git@v0.17.1
+----
+
+Verifica la instalación con el comando `ilab`:
+
+[source,bash]
+----
+ilab
+----
+

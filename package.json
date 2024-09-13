@@ -17,10 +17,8 @@
     "@babel/register": "^7.5.5",
     "browser-sync": "^2.26.7",
     "fs-extra": "^8.1.0",
-    "gulp": "^4.0.0",
     "yaml-js": "^0.2.3"
   },
-  "devDependencies": {},
   "scripts": {
     "dev": "gulp",
     "clean": "gulp clean",
@@ -35,5 +33,8 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0"
   }
 }

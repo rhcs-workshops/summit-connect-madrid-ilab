@@ -1,20 +1,32 @@
-= Welcome to Template Tutorial
+= Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM
 :page-layout: home
-:!sectids:
+// :!sectids:
 
-[.text-center.strong]
-== Publish Services to Kubernetes
-
-A Kubernetes tutorial to show how you can deploy a Java service to a Kubernetes cluster as it was a child game.
+Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y desplegar Modelos de Lenguaje Grandes (LLM). A continuación, te proporcionamos una visión general de las principales secciones del laboratorio.
 
 [.tiles.browse]
-== Browse modules
+== Explorar módulos
 
 [.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+.xref:01-introduction.adoc[Introducción]
+* Introducción a los LLMs y su entrenamiento.
 
 [.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+.xref:02-installation.adoc[Instalación de InstructLab]
+* Requisitos del sistema y configuración.
+
+[.tile]
+.xref:03-basic-usage.adoc[Uso Básico]
+* Inicializar y usar el modelo.
+
+[.tile]
+.xref:04-training.adoc[Entrenamiento]
+* Cómo entrenar y ajustar el modelo.
+
+[.tile]
+.xref:05-interacting.adoc[Interacción con el modelo]
+* Habla con el modelo para comprobar el efecto de Instructlab.
+
+[.tile]
+.xref:06-deployment.adoc[Despliegue]
+* Preparar y desplegar el modelo en producción.

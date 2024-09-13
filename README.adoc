@@ -1,1 +1,14 @@
-Check the build courseware https://redhat-scholars.github.io/build-course[documentation]  on how folder structure, how to use macros and other gotchas
+= Laboratorio RHEL AI e InstructLab
+
+NOTE: Check the build courseware https://redhat-scholars.github.io/build-course[documentation]  on how folder structure, how to use macros and other gotchas
+
+
+== Run it locally
+
+First, you need to install `gulp`. If using Fedora, you might try with `npm install --global gulp-cli`. Then, try it locally with the following command:
+
+[source, bash]
+----
+$ gulp 
+----
+
