@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM :: Template Tutorial</title>
+    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/index.html">
+    <link rel="next" href="01-introduction.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab">Template Tutorial</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="instructlab" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-introduction.html">1. Introducción</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-introduction.html#que-es-un-llm">¿Qué es un LLM?</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-introduction.html#como-entrenar-llm">¿Cómo se entrenan los LLM?</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-introduction.html#relacion-instructlab">¿Cómo se relaciona con InstructLab?</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-installation.html">2. Instalación de InstructLab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-installation.html#requisitos">Requisitos del sistema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-installation.html#instalacion-entorno">Instalación del entorno</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-basic-usage.html">3. Uso Básico de InstructLab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-basic-usage.html#inicializar">Inicializar InstructLab</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-basic-usage.html#descargar-modelo">Descargar el modelo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-basic-usage.html#servir-modelo">Servir el modelo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-training.html">4. Entrenamiento del Modelo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-training.html#preparar-entorno">Preparar el entorno</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-training.html#ajuste-fino">Ajuste fino del modelo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="05-interacting.html">5. Interacción con el Modelo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="05-interacting.html#sesion-interactiva">Iniciar una sesión interactiva</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="06-deployment.html">6. Despliegue del Modelo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="06-deployment.html#preparar-produccion">Preparar para producción</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="06-deployment.html#desplegar-modelo">Desplegar el modelo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Instructlab</a></li>
+    <li><a href="index.html">Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/edit/master/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y desplegar Modelos de Lenguaje Grandes (LLM). A continuación, te proporcionamos una visión general de las principales secciones del laboratorio.</p>
+</div>
+</div>
+</div>
+<div class="sect1 tiles browse">
+<h2 id="_explorar_módulos"><a class="anchor" href="#_explorar_módulos"></a>Explorar módulos</h2>
+<div class="sectionbody">
+<div class="ulist tile">
+<div class="title"><a href="01-introduction.html" class="xref page">Introducción</a></div>
+<ul>
+<li>
+<p>Introducción a los LLMs y su entrenamiento.</p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="02-installation.html" class="xref page">Instalación de InstructLab</a></div>
+<ul>
+<li>
+<p>Requisitos del sistema y configuración.</p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="03-basic-usage.html" class="xref page">Uso Básico</a></div>
+<ul>
+<li>
+<p>Inicializar y usar el modelo.</p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="04-training.html" class="xref page">Entrenamiento</a></div>
+<ul>
+<li>
+<p>Cómo entrenar y ajustar el modelo.</p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="05-interacting.html" class="xref page">Interacción con el modelo</a></div>
+<ul>
+<li>
+<p>Habla con el modelo para comprobar el efecto de Instructlab.</p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="06-deployment.html" class="xref page">Despliegue</a></div>
+<ul>
+<li>
+<p>Preparar y desplegar el modelo en producción.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="next"><a href="01-introduction.html">1. Introducción</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
