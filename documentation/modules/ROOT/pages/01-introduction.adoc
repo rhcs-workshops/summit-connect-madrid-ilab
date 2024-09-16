@@ -1,12 +1,14 @@
-= Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM
-
 == Introducción al Laboratorio
 
 Durante este laboratorio, aprenderás cómo usar RHEL AI y cómo entrenar un Modelo de Lenguaje Grande (LLM) con generación de datos sintéticos mediante InstructLab.
 
 === ¿Qué es un LLM?
 
-Un LLM es un modelo de inteligencia artificial que usa aprendizaje profundo para generar texto similar al humano. Estos modelos aprenden patrones del lenguaje a partir de grandes cantidades de datos y se utilizan para tareas de procesamiento de lenguaje natural.
+Un LLM es un modelo de inteligencia artificial que usa aprendizaje profundo. Estos modelos aprenden patrones del lenguaje a partir de grandes cantidades de datos y se utilizan para tareas de procesamiento de lenguaje natural. Pueden utilizarse para:
+ 
+ * Resumir y redactar páginas de texto
+ * Responder a preguntas
+ * Traducir contenido
 
 === ¿Cómo se entrenan los LLM?
 
@@ -20,4 +22,6 @@ Los LLM se entrenan con técnicas de aprendizaje profundo en varias fases:
 
 === ¿Cómo se relaciona con InstructLab?
 
-InstructLab usa generación de datos sintéticos para entrenar modelos, reduciendo la dependencia de anotaciones humanas.
+InstructLab usa generación de datos sintéticos para entrenar modelos, reduciendo la dependencia de anotaciones humanas. ¡Vamos a ponerlo en marcha!
+
+* xref:02-installation.adoc[2. Laboratorio]

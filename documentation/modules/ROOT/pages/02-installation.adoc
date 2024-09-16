@@ -1,11 +1,8 @@
-= Instalación de InstructLab
+== Preparar el entorno del laboratorio
 
-== Requisitos del sistema
+En este entorno usaremos RHEL AI, un sistema operativo optimizado para cargas de trabajo de IA y ML. Como requisitos, utilizaremos Python 3.9+ y un mínimo de 60GB libres en el disco.
 
-* Python 3.9+
-* 60GB de espacio en disco
-
-== Instalación del entorno
+Primero, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos Instructlab.
 
 [source,bash]
 ----
@@ -14,10 +11,28 @@ source venv/bin/activate
 pip install git+https://github.com/instructlab/instructlab.git@v0.17.1
 ----
 
-Verifica la instalación con el comando `ilab`:
+¡Perfecto! Ya podemos usar Instructlab con el comando `ilab`. Ahora vamos a inicializar el entorno para empezar a trabajar con los modelos:
 
 [source,bash]
 ----
-ilab
+ilab config init
+-> Presiona enter cuando el comando pida argumentos.
 ----
 
+Durante la fase de inicialización ocurren varias cosas:
+
+* Se localiza una taxonomía por defecto en el sistema de archivos local.
+* Se crea un archivo de configuración (config.yaml) en el directorio actual.
+
+El archivo *config.yaml* contiene los valores predeterminados que utilizaremos en este taller. Este archivo nos permite ajustar los parámetros a nuestro gusto.
+
+== Descargar y servir el modelo
+
+Con el entorno configurado, ahora podemos descargar un modelo cuantificado (comprimido y optimizado) al directorio local para ser utilizado como un servidor de modelos para las solicitudes de la API, o para ayudar a entrenar a un nuevo modelo como haremos en este taller.
+
+[source,bash]
+----
+ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
+----
+
+El comando `ilab model download` descarga el modelo Granite 7b Lab de los repositorios de HuggingFace.
