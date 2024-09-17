@@ -1,0 +1,26 @@
+* xref:01-introduction.adoc[1. Introducción]
+** xref:01-introduction.adoc#que-es-un-llm[¿Qué es un LLM?]
+** xref:01-introduction.adoc#como-entrenar-llm[¿Cómo se entrenan los LLM?]
+** xref:01-introduction.adoc#relacion-instructlab[¿Cómo se relaciona con InstructLab?]
+
+* xref:02-installation.adoc[2. Instalación de InstructLab]
+** xref:02-installation.adoc#requisitos[Requisitos del sistema]
+** xref:02-installation.adoc#instalacion-entorno[Instalar el entorno]
+
+* xref:03-basic-usage.adoc[3. Uso Básico de InstructLab]
+** xref:03-basic-usage.adoc#inicializar[Inicializar InstructLab]
+** xref:03-basic-usage.adoc#descargar-modelo[Descargar el modelo]
+** xref:03-basic-usage.adoc#servir-modelo[Servir el modelo]
+
+* xref:04-training.adoc[4. Entrenamiento del Modelo]
+** xref:04-training.adoc#preparar-entorno[Preparar el entorno]
+** xref:04-training.adoc#ajuste-fino[Ajuste fino del modelo]
+
+* xref:05-interacting.adoc[5. Interacción con el Modelo]
+** xref:05-interacting.adoc#sesion-interactiva[Iniciar una sesión interactiva]
+
+* xref:06-deployment.adoc[6. Despliegue del Modelo]
+** xref:06-deployment.adoc#preparar-produccion[Preparar para producción]
+** xref:06-deployment.adoc#desplegar-modelo[Desplegar el modelo]
+
+* xref:02-implementation.adoc[Guia del laboratorio]
