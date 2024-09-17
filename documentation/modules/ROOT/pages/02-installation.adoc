@@ -1,8 +1,7 @@
+[2. Laboratorio]
 == Preparar el entorno del laboratorio
 
-En este entorno usaremos RHEL AI, un sistema operativo optimizado para cargas de trabajo de IA y ML. Como requisitos, utilizaremos Python 3.9+ y un mínimo de 60GB libres en el disco.
-
-Primero, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos Instructlab.
+Para comenzar, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos Instructlab.
 
 [source,bash]
 ----
@@ -35,4 +34,47 @@ Con el entorno configurado, ahora podemos descargar un modelo cuantificado (comp
 ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
 ----
 
-El comando `ilab model download` descarga el modelo Granite 7b Lab de los repositorios de HuggingFace.
+El comando `ilab model download` descarga el modelo Granite 7b Lab de los repositorios de HuggingFace. Ahora que hemos descargado el modelo, podemos servir y chatear con él. Servir el modelo significa que vamos a ejecutar un servidor que permitirá a otros programas interactuar con los datos de forma similar a hacer una llamada a la API.
+
+[source,bash]
+----
+ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
+----
+
+El comando `serve` puede tomar un argumento opcional --model-path. En este caso, queremos servir el modelo Granite. Si no se proporciona ninguna ruta de modelo, se utilizará el valor predeterminado del archivo *config.yaml*.
+
+WOOHOO! Con el modelo servido, ya estamos listos para probar el LLM. Para ello, vamos a chatear con el modelo.
+
+== Chatear con el modelo
+
+Vamos a dejar el modelo sirviendose en el terminal donde hemos trabajo y abriremos una nueva pestaña del terminal. Volveremos a activar el entorno virtual de Python.
+
+[source,bash]
+----
+cd ~/instructlab
+source venv/bin/activate
+----
+
+Ya dentro del entorno, podemos iniciar una sesión de chat con el comando ilab chat:
+
+[source,bash]
+----
+ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf
+----
+
+En tu terminal debería aparecer:
+
+[source,bash]
+----
+╭───────────────────────────────────────────────────────────────────────────╮
+│ Welcome to InstructLab Chat w/ MODELS/GRANITE-7B-LAB-Q4_K_M.GGUF (type /h for help)
+╰───────────────────────────────────────────────────────────────────────────╯
+>>>
+----
+
+¡Genial! Tenemos todo listo para hacerle preguntas a nuestro LLM. Prueba a escribir una pregunta, por ejemplo: ¿Qué es Openshift en 20 palabras o menos?
+
+[source,bash]
+----
+¿Qué es Openshift en 20 palabras o menos?
+----

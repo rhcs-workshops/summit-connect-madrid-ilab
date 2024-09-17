@@ -1,6 +1,6 @@
 == Introducción al Laboratorio
 
-Durante este laboratorio, aprenderás cómo usar RHEL AI y cómo entrenar un Modelo de Lenguaje Grande (LLM) con generación de datos sintéticos mediante InstructLab.
+En este laboratorio, aprenderás a utilizar Instructlab para interactuar con un LLM y ver de primera mano el potencial de la inteligencia artificial.
 
 === ¿Qué es un LLM?
 

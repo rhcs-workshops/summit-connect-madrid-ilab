@@ -1,4 +1,4 @@
-= Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM
+= Laboratorio InstructLab: Introducción a la alineación de modelos LLM
 :page-layout: home
 // :!sectids:
 
@@ -14,3 +14,5 @@ Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y 
 [.tile]
 .xref:02-installation.adoc[Laboratorio]
 * Preparación y ejecución del laboratorio.
+.xref:02-installation.adoc[Laboratorio]
+* Chatear con el modelo

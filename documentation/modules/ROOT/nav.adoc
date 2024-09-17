@@ -6,3 +6,4 @@
 * xref:02-installation.adoc[2. Laboratorio]
 ** xref:02-installation.adoc#requisitos[Preparar el entorno]
 ** xref:02-installation.adoc#instalacion-entorno[Descargar y servir modelo]
+** xref:02-installation.adoc#i[Chatear con el modelo]
