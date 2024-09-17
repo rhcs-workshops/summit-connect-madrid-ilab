@@ -6,7 +6,7 @@
     <title>Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM :: Template Tutorial</title>
     <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-introduction.html">
     <link rel="prev" href="index.html">
-    <link rel="next" href="02-installation.html">
+    <link rel="next" href="02-implementation.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -53,7 +53,7 @@
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="01-introduction.html">1. Introducción</a>
+    <a class="nav-link" href="01-introduction.html">Introducción</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#que-es-un-llm">¿Qué es un LLM?</a>
@@ -68,61 +68,22 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="02-installation.html">2. Instalación de InstructLab</a>
+    <a class="nav-link" href="02-implementation.html">Guia del laboratorio</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-installation.html#requisitos">Requisitos del sistema</a>
+    <a class="nav-link" href="02-implementation.html#instalacion">1. Instalación de InstructLab</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-installation.html#instalacion-entorno">Instalación del entorno</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="03-basic-usage.html">3. Uso Básico de InstructLab</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-basic-usage.html#inicializar">Inicializar InstructLab</a>
+    <a class="nav-link" href="02-implementation.html#uso-basico">2. Uso básico de InstructLab</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-basic-usage.html#descargar-modelo">Descargar el modelo</a>
+    <a class="nav-link" href="02-implementation.html#entrenamiento">3. Entrenamiento del modelo</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-basic-usage.html#servir-modelo">Servir el modelo</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-training.html">4. Entrenamiento del Modelo</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-training.html#preparar-entorno">Preparar el entorno</a>
+    <a class="nav-link" href="02-implementation.html#interaccion">4. Interacción con el modelo</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-training.html#ajuste-fino">Ajuste fino del modelo</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="05-interacting.html">5. Interacción con el Modelo</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="05-interacting.html#sesion-interactiva">Iniciar una sesión interactiva</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="06-deployment.html">6. Despliegue del Modelo</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="06-deployment.html#preparar-produccion">Preparar para producción</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="06-deployment.html#desplegar-modelo">Desplegar el modelo</a>
+    <a class="nav-link" href="02-implementation.html#despliegue">5. Despliegue del modelo</a>
   </li>
 </ul>
   </li>
@@ -139,8 +100,8 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">Instructlab</a></li>
-    <li><a href="01-introduction.html">1. Introducción</a></li>
+    <li><a href="index.html">InstructLab</a></li>
+    <li><a href="01-introduction.html">Introducción</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/edit/master/documentation/modules/ROOT/pages/01-introduction.adoc">Edit this Page</a></div>
@@ -155,20 +116,20 @@
 <p>Durante este laboratorio, aprenderás cómo usar RHEL AI y cómo entrenar un Modelo de Lenguaje Grande (LLM) con generación de datos sintéticos mediante InstructLab.</p>
 </div>
 <div class="sect2">
-<h3 id="_qué_es_un_llm"><a class="anchor" href="#_qué_es_un_llm"></a>¿Qué es un LLM?</h3>
+<h3 id="que-es-un-llm"><a class="anchor" href="#que-es-un-llm"></a>¿Qué es un LLM?</h3>
 <div class="paragraph">
-<p>Un LLM es un modelo de inteligencia artificial que usa aprendizaje profundo para generar texto similar al humano. Estos modelos aprenden patrones del lenguaje a partir de grandes cantidades de datos y se utilizan para tareas de procesamiento de lenguaje natural.</p>
+<p>Un LLM es un modelo de inteligencia artificial que usa aprendizaje profundo para generar texto similar al humano. Estos modelos aprenden patrones del lenguaje a partir de grandes cantidades de datos y se utilizan para tareas de procesamiento de lenguaje natural, como pueden ser traducciones o sintésis de textos.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cómo_se_entrenan_los_llm"><a class="anchor" href="#_cómo_se_entrenan_los_llm"></a>¿Cómo se entrenan los LLM?</h3>
+<h3 id="como-entrenar-llm"><a class="anchor" href="#como-entrenar-llm"></a>¿Cómo se entrenan los LLM?</h3>
 <div class="paragraph">
 <p>Los LLM se entrenan con técnicas de aprendizaje profundo en varias fases:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Recolección de datos</strong>: Texto de diversas fuentes.</p>
+<p><strong>Recolección de datos</strong>: Recolección de texto de diversas fuentes.</p>
 </li>
 <li>
 <p><strong>Preprocesamiento</strong>: Limpieza de datos.</p>
@@ -186,16 +147,16 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cómo_se_relaciona_con_instructlab"><a class="anchor" href="#_cómo_se_relaciona_con_instructlab"></a>¿Cómo se relaciona con InstructLab?</h3>
+<h3 id="relacion-instructlab"><a class="anchor" href="#relacion-instructlab"></a>¿Cómo se relaciona con InstructLab?</h3>
 <div class="paragraph">
-<p>InstructLab usa generación de datos sintéticos para entrenar modelos, reduciendo la dependencia de anotaciones humanas.</p>
+<p>InstructLab usa generación de datos sintéticos para entrenar modelos, reduciendo la dependencia de anotaciones humanas. Es decir, puede hacer uso del LLM para generar datos con los que seguir entrenando el modelo.</p>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="index.html">Instructlab</a></span>
-  <span class="next"><a href="02-installation.html">2. Instalación de InstructLab</a></span>
+  <span class="prev"><a href="index.html">InstructLab</a></span>
+  <span class="next"><a href="02-implementation.html">Guia del laboratorio</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
