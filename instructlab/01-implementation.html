@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Guía de Laboratorio :: Template Tutorial</title>
+    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-implementation.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="02-annex.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab">Template Tutorial</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="instructlab" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-implementation.html">Guia del laboratorio</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#instalacion">1. Instalación de InstructLab</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#uso-basico">2. Uso básico de InstructLab</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#entrenamiento">3. Entrenamiento del modelo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#interaccion">4. Interacción con el modelo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#despliegue">5. Despliegue del modelo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-annex.html">Anexo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-annex.html#que-es-un-llm">¿Qué es un LLM?</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-annex.html#como-entrenar-llm">¿Cómo se entrenan los LLM?</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-annex.html#relacion-instructlab">¿Cómo se relaciona con InstructLab?</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">InstructLab</a></li>
+    <li><a href="01-implementation.html">Guia del laboratorio</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/edit/master/documentation/modules/ROOT/pages/01-implementation.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Guía de Laboratorio</h1>
+<div class="sect1">
+<h2 id="intslacion"><a class="anchor" href="#intslacion"></a>Instalación de InstructLab</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_requisitos_del_sistema"><a class="anchor" href="#_requisitos_del_sistema"></a>Requisitos del sistema</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Python 3.9+</p>
+</li>
+<li>
+<p>60GB de espacio en disco</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_instalar_el_entorno"><a class="anchor" href="#_instalar_el_entorno"></a>Instalar el entorno</h3>
+<div class="paragraph">
+<p>Accede al directorio de <strong>IntsructLab</strong>. Una vez en él, arranca un entorno virtual e instala la herramienta:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/instructlab
+source venv/bin/activate
+pip install git+https://github.com/instructlab/instructlab.git@v0.17.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Verifica la instalación con el comando <code>ilab</code>:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="uso-basico"><a class="anchor" href="#uso-basico"></a>Uso básico de IntsructLab</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_inicializar_instructlab"><a class="anchor" href="#_inicializar_instructlab"></a>Inicializar InstructLab</h3>
+<div class="paragraph">
+<p>Inicializa la herramienta:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab config init</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La salida del comando será la siguiente:</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Found config.yaml in the current directory, do you still want to continue? [y/N]:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Confirma el uso de <code>config.yaml</code>. Para ello escribe <kbd>y</kbd> y presiona <kbd>Enter</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Continua con los valores por defecto pulsando <kbd>Enter</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>En caso de recibir la siguiente salida, escribe <kbd>y</kbd> y confirma con <kbd>Enter</kbd>:</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`taxonomy` seems to not exist or is empty. Should I clone https://github.com/instructlab/taxonomy.git for you? [y/N]:</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_descargar_el_modelo"><a class="anchor" href="#_descargar_el_modelo"></a>Descargar el modelo</h3>
+<div class="paragraph">
+<p>Descarga el modelo a usar:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servir_el_modelo"><a class="anchor" href="#_servir_el_modelo"></a>Servir el modelo</h3>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="entrenamiento"><a class="anchor" href="#entrenamiento"></a>Entrenamiento del Modelo</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_preparar_el_entorno_para_el_entrenamiento"><a class="anchor" href="#_preparar_el_entorno_para_el_entrenamiento"></a>Preparar el entorno para el entrenamiento</h3>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab train --dataset synthetic-dataset.json --epochs 3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_monitoreo_del_proceso_de_entrenamiento"><a class="anchor" href="#_monitoreo_del_proceso_de_entrenamiento"></a>Monitoreo del proceso de entrenamiento</h3>
+<div class="paragraph">
+<p>El comando anterior inicia el proceso de entrenamiento y puedes observar el progreso en la salida del terminal.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ajuste_fino_del_modelo"><a class="anchor" href="#_ajuste_fino_del_modelo"></a>Ajuste fino del modelo</h3>
+<div class="paragraph">
+<p>Después del entrenamiento inicial, puedes ajustar el modelo usando un nuevo conjunto de datos con el siguiente comando:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab fine-tune --dataset additional-dataset.json --model trained-model.pt</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interaccion"><a class="anchor" href="#interaccion"></a>Interacción con el Modelo</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_iniciar_una_sesión_interactiva"><a class="anchor" href="#_iniciar_una_sesión_interactiva"></a>Iniciar una sesión interactiva</h3>
+<div class="paragraph">
+<p>Para comenzar una conversación con el modelo entrenado, usa el siguiente comando:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model chat --model trained-model.pt</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_evaluación_de_la_salida"><a class="anchor" href="#_evaluación_de_la_salida"></a>Evaluación de la salida</h3>
+<div class="paragraph">
+<p>El modelo responderá en tiempo real a las entradas proporcionadas. Puedes usarlo para probar cómo responde a diferentes tipos de preguntas.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="despliegue"><a class="anchor" href="#despliegue"></a>Despliegue del Modelo</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_preparar_el_modelo_para_producción"><a class="anchor" href="#_preparar_el_modelo_para_producción"></a>Preparar el modelo para producción</h3>
+<div class="paragraph">
+<p>Una vez entrenado, el modelo debe ser empaquetado para su despliegue. Usa el siguiente comando para empaquetar el modelo:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab package --model trained-model.pt --output model-package.tar.gz</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_desplegar_el_modelo"><a class="anchor" href="#_desplegar_el_modelo"></a>Desplegar el modelo</h3>
+<div class="paragraph">
+<p>El modelo empaquetado puede ser desplegado en servidores compatibles con InstructLab. Sube el archivo comprimido al servidor de producción y usa:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab deploy --package model-package.tar.gz --host production-server</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">InstructLab</a></span>
+  <span class="next"><a href="02-annex.html">Anexo</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
