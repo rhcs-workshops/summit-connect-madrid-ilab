@@ -10,25 +10,25 @@ Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y 
 == Explorar módulos
 
 [.tile]
-.xref:01-introduction.adoc[Introducción]
-* Introducción a los LLMs y su entrenamiento.
-
-[.tile]
-.xref:02-implementation.adoc#instalacion[Instalación de InstructLab]
+.xref:01-implementation.adoc#instalacion[Instalación de InstructLab]
 * Requisitos del sistema y configuración.
 
 [.tile]
-.xref:02-implementation.adoc#uso-basico[Uso Básico]
+.xref:01-implementation.adoc#uso-basico[Uso Básico]
 * Inicializar y usar el modelo.
 
 [.tile]
-.xref:02-implementation.adoc#entrenamiento[Entrenamiento]
+.xref:01-implementation.adoc#entrenamiento[Entrenamiento]
 * Cómo entrenar y ajustar el modelo.
 
 [.tile]
-.xref:02-implementation.adoc#interaccion[Interacción con el modelo]
+.xref:01-implementation.adoc#interaccion[Interacción con el modelo]
 * Habla con el modelo para comprobar el efecto de Instructlab.
 
 [.tile]
-.xref:02-implementation.adoc#despliegue[Despliegue]
+.xref:01-implementation.adoc#despliegue[Despliegue]
 * Preparar y desplegar el modelo en producción.
+
+[.tile]
+.xref:02-annex.adoc[Anexo]
+* Introducción a los LLMs y su entrenamiento.
