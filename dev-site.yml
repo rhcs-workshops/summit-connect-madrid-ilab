@@ -13,7 +13,6 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    #title: Laboratorio RHEL AI e InstructLab
     page-pagination: true
   extensions:
     - ./lib/remote-include-processor.js

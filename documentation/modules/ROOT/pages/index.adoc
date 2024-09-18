@@ -1,4 +1,4 @@
-= Laboratorio RHEL AI e InstructLab: Introducción a la alineación de modelos LLM
+= Laboratorio de InstructLab: Introducción a la alineación de modelos LLM
 :page-layout: home
 :!sectids:
 include::_attributes.adoc[]
