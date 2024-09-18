@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Guía de Laboratorio :: Template Tutorial</title>
+    <title>Guía del Laboratorio :: Template Tutorial</title>
     <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-implementation.html">
     <link rel="prev" href="index.html">
     <link rel="next" href="02-annex.html">
@@ -108,9 +108,9 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Guía de Laboratorio</h1>
+<h1 class="page">Guía del Laboratorio</h1>
 <div class="sect1">
-<h2 id="intslacion"><a class="anchor" href="#intslacion"></a>Instalación de InstructLab</h2>
+<h2 id="instalacion"><a class="anchor" href="#instalacion"></a>1. Instalación de InstructLab</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_requisitos_del_sistema"><a class="anchor" href="#_requisitos_del_sistema"></a>Requisitos del sistema</h3>
@@ -128,7 +128,7 @@
 <div class="sect2">
 <h3 id="_instalar_el_entorno"><a class="anchor" href="#_instalar_el_entorno"></a>Instalar el entorno</h3>
 <div class="paragraph">
-<p>Accede al directorio de <strong>IntsructLab</strong>. Una vez en él, arranca un entorno virtual e instala la herramienta:</p>
+<p>Para comenzar, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos Instructlab.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -138,105 +138,189 @@ pip install git+https://github.com/instructlab/instructlab.git@v0.17.1</code></p
 </div>
 </div>
 <div class="paragraph">
-<p>Verifica la instalación con el comando <code>ilab</code>:</p>
-</div>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab</code></pre>
-</div>
+<p>¡Perfecto! Ya podemos usar Instructlab con el comando <code>ilab</code>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="uso-basico"><a class="anchor" href="#uso-basico"></a>Uso básico de IntsructLab</h2>
+<h2 id="uso-basico"><a class="anchor" href="#uso-basico"></a>2. Uso básico de IntructLab</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_inicializar_instructlab"><a class="anchor" href="#_inicializar_instructlab"></a>Inicializar InstructLab</h3>
+<h3 id="_inicialización"><a class="anchor" href="#_inicialización"></a>Inicialización</h3>
 <div class="paragraph">
-<p>Inicializa la herramienta:</p>
+<p>Antes de usar un modelo, hay que establecer la inicialización. Durante esta fase ocurren varias cosas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se localiza una taxonomía por defecto en el sistema de archivos local.</p>
+</li>
+<li>
+<p>Se crea un archivo de configuración (config.yaml) en el directorio actual.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>El archivo <strong>config.yaml</strong> contiene los valores predeterminados que utilizaremos. Estos nos permiten ajustar el comportamiento del modelo, por ejemplo que use un número determinado de CPUs.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab config init</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab config init
+-&gt; Presiona enter cuando el comando pida argumentos.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>La salida del comando será la siguiente:</p>
+<p>El resultado final de ejecutar el comando es:</p>
 </div>
-<div class="listingblock console-output">
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Found config.yaml in the current directory, do you still want to continue? [y/N]:</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Confirma el uso de <code>config.yaml</code>. Para ello escribe <kbd>y</kbd> y presiona <kbd>Enter</kbd>.</p>
-</div>
-<div class="paragraph">
-<p>Continua con los valores por defecto pulsando <kbd>Enter</kbd>.</p>
-</div>
-<div class="paragraph">
-<p>En caso de recibir la siguiente salida, escribe <kbd>y</kbd> y confirma con <kbd>Enter</kbd>:</p>
-</div>
-<div class="listingblock console-output">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`taxonomy` seems to not exist or is empty. Should I clone https://github.com/instructlab/taxonomy.git for you? [y/N]:</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">'Initialization completed successfully, you`re ready to start using ilab. Enjoy!'</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_descargar_el_modelo"><a class="anchor" href="#_descargar_el_modelo"></a>Descargar el modelo</h3>
 <div class="paragraph">
-<p>Descarga el modelo a usar:</p>
+<p>Con el entorno configurado, ahora podemos descargar un modelo comprimido y optimizado al directorio local para ser utilizado como un servidor.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>El comando <code>ilab model download</code> descarga el modelo Granite 7b Lab desde los repositorios de HuggingFace.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_servir_el_modelo"><a class="anchor" href="#_servir_el_modelo"></a>Servir el modelo</h3>
+<div class="paragraph">
+<p>Ahora debemos servir el modelo para poder interactuar con él de forma muy parecida a como haríamos llamadas a una API.</p>
+</div>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>¡Genial! Con el modelo ya servido, estamos listos para probar el LLM.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chatear_con_el_modelo"><a class="anchor" href="#_chatear_con_el_modelo"></a>Chatear con el modelo</h3>
+<div class="paragraph">
+<p>Vamos a dejar el modelo sirviendose en el terminal donde hemos trabajado y abriremos una nueva pestaña del terminal. Volveremos a activar el entorno virtual de Python.</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/instructlab
+source venv/bin/activate</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ya dentro del entorno, podemos iniciar una sesión de chat con el comando ilab chat:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En tu terminal debería aparecer:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">╭───────────────────────────────────────────────────────────────────────────╮
+│ Welcome to InstructLab Chat w/ MODELS/GRANITE-7B-LAB-Q4_K_M.GGUF
+╰───────────────────────────────────────────────────────────────────────────╯
+&gt;&gt;&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Tenemos todo listo para hacerle preguntas a nuestro LLM. Prueba a escribir una pregunta: ¿Qué es Openshift en 20 palabras o menos?</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">¿Qué es Openshift en 20 palabras o menos?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>¡Genial! Parece que el modelo funciona y es capaz de generar una respuesta a nuestras preguntas.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="entrenamiento"><a class="anchor" href="#entrenamiento"></a>Entrenamiento del Modelo</h2>
+<h2 id="entrenamiento"><a class="anchor" href="#entrenamiento"></a>3. Entrenamiento del Modelo</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_preparar_el_entorno_para_el_entrenamiento"><a class="anchor" href="#_preparar_el_entorno_para_el_entrenamiento"></a>Preparar el entorno para el entrenamiento</h3>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab train --dataset synthetic-dataset.json --epochs 3</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_monitoreo_del_proceso_de_entrenamiento"><a class="anchor" href="#_monitoreo_del_proceso_de_entrenamiento"></a>Monitoreo del proceso de entrenamiento</h3>
 <div class="paragraph">
-<p>El comando anterior inicia el proceso de entrenamiento y puedes observar el progreso en la salida del terminal.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ajuste_fino_del_modelo"><a class="anchor" href="#_ajuste_fino_del_modelo"></a>Ajuste fino del modelo</h3>
-<div class="paragraph">
-<p>Después del entrenamiento inicial, puedes ajustar el modelo usando un nuevo conjunto de datos con el siguiente comando:</p>
+<p>Vamos a probar con otra pregunta como:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab fine-tune --dataset additional-dataset.json --model trained-model.pt</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">¿Qué es InstructLab?</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>El modelo debería ser capaz de generar una respuesta que parece correcta, pero no lo es y se aleja mucho de la realidad.
+Estos errores suelen denominarse «alucinaciones». La alineación de modelos (como la que haremos ahora) es una forma de mejorar las respuestas de un modelo y evitar alucinaciones.</p>
+</div>
+<div class="paragraph">
+<p>Para solucionar esto, nos centraremos en añadir nuevo conocimiento al modelo para que sepa más sobre Instructlab. ¡Manos a la obra!</p>
+</div>
+<div class="paragraph">
+<p>Primero vamos a terminar la sesión de chat con el modelo. Escribe 'exit'.</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">exit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ahora vamos a mejorar el modelo modificando su taxonomía.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_entender_la_taxonomía"><a class="anchor" href="#_entender_la_taxonomía"></a>Entender la taxonomía</h3>
+<div class="paragraph">
+<p>¿Te has preguntado por qué se llama InstructLab?</p>
+</div>
+<div class="paragraph">
+<p>El método LAB se basa en taxonomías.
+InstructLab facilita el proceso de ajuste y mejora de los modelos mediante la recopilación de dos tipos de datos: conocimientos y habilidades.
+La comunidad open-source sube aportaciones y se recogen en una taxonomía de archivos YAML. Esta se utiliza en el proceso de generación de datos sintéticos.</p>
+</div>
+<div class="paragraph">
+<p>Echémosle un ojo a la taxonomía.</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/instructlab
+tree taxonomy/  | head</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Podemos ver que la taxonomía recoge conocimiento sobre artes, ingeniería, geografía&#8230;&#8203; Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p ~/instructlab/taxonomy/knowledge/instructlab/overview</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para este enfoque, proporcionamos un archivo llamado qna.yaml. Este contiene un cojunto de preguntas y respuestas sobre lo que queremos que aprenda el modelo.</p>
+</div>
+<div class="paragraph">
+<p>&#8201;&#8212;&#8201;EN CONSTRUCCION&#8201;&#8212;&#8201;</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="interaccion"><a class="anchor" href="#interaccion"></a>Interacción con el Modelo</h2>
+<h2 id="interaccion"><a class="anchor" href="#interaccion"></a>4. Interacción con el Modelo</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_iniciar_una_sesión_interactiva"><a class="anchor" href="#_iniciar_una_sesión_interactiva"></a>Iniciar una sesión interactiva</h3>
@@ -258,7 +342,7 @@ pip install git+https://github.com/instructlab/instructlab.git@v0.17.1</code></p
 </div>
 </div>
 <div class="sect1">
-<h2 id="despliegue"><a class="anchor" href="#despliegue"></a>Despliegue del Modelo</h2>
+<h2 id="despliegue"><a class="anchor" href="#despliegue"></a>5. Despliegue del Modelo</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_preparar_el_modelo_para_producción"><a class="anchor" href="#_preparar_el_modelo_para_producción"></a>Preparar el modelo para producción</h3>
