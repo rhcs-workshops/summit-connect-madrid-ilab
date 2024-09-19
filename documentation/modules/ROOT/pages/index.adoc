@@ -10,7 +10,7 @@ Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y 
 == Explorar módulos
 
 [.tile]
-.xref:01-implementation.adoc#instalacion[Instalación de InstructLab]
+.xref:01-implementation.adoc#instalacion[Instalación]
 * Requisitos del sistema y configuración.
 
 [.tile]
@@ -18,16 +18,12 @@ Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y 
 * Inicializar y usar el modelo.
 
 [.tile]
-.xref:01-implementation.adoc#entrenamiento[Entrenamiento]
+.xref:01-implementation.adoc#entrenamiento[Entrenamiento del modelo]
 * Cómo entrenar y ajustar el modelo.
 
 [.tile]
-.xref:01-implementation.adoc#interaccion[Interacción con el modelo]
-* Habla con el modelo para comprobar el efecto de Instructlab.
-
-[.tile]
-.xref:01-implementation.adoc#despliegue[Despliegue]
-* Preparar y desplegar el modelo en producción.
+.xref:01-implementation.adoc#interaccion[Modelo entrenado]
+* Chatea con el modelo entrenado para comprobar el efecto de InstrucLab.
 
 [.tile]
 .xref:02-annex.adoc[Anexo]

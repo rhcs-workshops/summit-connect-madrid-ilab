@@ -1,9 +1,8 @@
 * xref:01-implementation.adoc[Guia del laboratorio]
-** xref:01-implementation.adoc#instalacion[1. Instalación de InstructLab]
-** xref:01-implementation.adoc#uso-basico[2. Uso básico de InstructLab]
+** xref:01-implementation.adoc#instalacion[1. Instalación]
+** xref:01-implementation.adoc#uso-basico[2. Uso básico]
 ** xref:01-implementation.adoc#entrenamiento[3. Entrenamiento del modelo]
-** xref:01-implementation.adoc#interaccion[4. Interacción con el modelo]
-** xref:01-implementation.adoc#despliegue[5. Despliegue del modelo]
+** xref:01-implementation.adoc#interaccion[4. Modelo entrenado]
 
 * xref:02-annex.adoc[Anexo]
 ** xref:02-annex.adoc#que-es-un-llm[¿Qué es un LLM?]

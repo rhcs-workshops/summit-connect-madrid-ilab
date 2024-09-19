@@ -2,7 +2,7 @@ include::_attributes.adoc[]
 
 == Introducción al Laboratorio
 
-Durante este laboratorio, aprenderás cómo usar RHEL AI y cómo entrenar un Modelo de Lenguaje Grande (LLM) con generación de datos sintéticos mediante InstructLab.
+Durante este laboratorio, aprenderás cómo entrenar un Modelo de Lenguaje Grande (LLM) con generación de datos sintéticos mediante InstructLab.
 
 [#que-es-un-llm]
 === ¿Qué es un LLM?

@@ -2,7 +2,7 @@
 include::_attributes.adoc[]
 
 [#instalacion]
-== 1. Instalación de InstructLab
+== 1. Instalación
 
 === Requisitos del sistema
 
@@ -11,7 +11,7 @@ include::_attributes.adoc[]
 
 === Instalar el entorno
 
-Para comenzar, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos Instructlab.
+Para comenzar, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos InstructLab.
 
 [.console-input]
 [source,bash]
@@ -21,10 +21,10 @@ source venv/bin/activate
 pip install git+https://github.com/instructlab/instructlab.git@v0.17.1
 ----
 
-¡Perfecto! Ya podemos usar Instructlab con el comando `ilab`.
+¡Perfecto! Ya podemos usar InstructLab con el comando `ilab`.
 
 [#uso-basico]
-== 2. Uso básico de IntructLab
+== 2. Uso básico
 
 === Inicialización
 
@@ -128,7 +128,7 @@ Vamos a probar con otra pregunta como:
 El modelo debería ser capaz de generar una respuesta que parece correcta, pero no lo es y se aleja mucho de la realidad.
 Estos errores suelen denominarse «alucinaciones». La alineación de modelos (como la que haremos ahora) es una forma de mejorar las respuestas de un modelo y evitar alucinaciones.
 
-Para solucionar esto, nos centraremos en añadir nuevo conocimiento al modelo para que sepa más sobre Instructlab. ¡Manos a la obra!
+Para solucionar esto, nos centraremos en añadir nuevo conocimiento al modelo para que sepa más sobre InstructLab. ¡Manos a la obra!
 
 Primero vamos a terminar la sesión de chat con el modelo. Escribe 'exit'.
 
@@ -142,20 +142,20 @@ Ahora vamos a mejorar el modelo modificando su taxonomía.
 
 === Entender la taxonomía
 
-¿Te has preguntado por qué se llama InstructLab?
+¿Te has preguntado por qué InstructLab se llama así?
 
 El método LAB se basa en taxonomías.
 InstructLab facilita el proceso de ajuste y mejora de los modelos mediante la recopilación de dos tipos de datos: conocimientos y habilidades.
 La comunidad open-source sube aportaciones y se recogen en una taxonomía de archivos YAML. Esta se utiliza en el proceso de generación de datos sintéticos. 
 
 
-Echémosle un ojo a la taxonomía.
+Echémosle un ojo a la taxonomía actual.
 
 [.console-input]
 [source,bash]
 ----
 cd ~/instructlab
-tree taxonomy/  | head
+tree taxonomy/ | head
 ----
 
 Podemos ver que la taxonomía recoge conocimiento sobre artes, ingeniería, geografía... Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.
@@ -166,48 +166,114 @@ Podemos ver que la taxonomía recoge conocimiento sobre artes, ingeniería, geog
 mkdir -p ~/instructlab/taxonomy/knowledge/instructlab/overview
 ----
 
-Para este enfoque, proporcionamos un archivo llamado qna.yaml. Este contiene un cojunto de preguntas y respuestas sobre lo que queremos que aprenda el modelo.
+Ahora incluiremos un archivo *qna.yaml*. Este contiene un cojunto de preguntas y respuestas sobre lo que queremos que aprenda el modelo.
 
--- EN CONSTRUCCION --
+[.console-input]
+[source,bash]
+----
+cp -av ~/files/qna.yaml ~/instructlab/taxonomy/knowledge/instructlab/overview
+----
 
+Para comprobar que hemos copiado el archivo correcto, prueba el siguiente comando:
+
+[.console-input]
+[source,bash]
+----
+head ~/instructlab/taxonomy/knowledge/instructlab/overview/qna.yaml
+----
+
+Si todo ha ido bien, deberías poder ver una pregunta y una respuesta. Con InstructLab, puedes comprobar que la estructura de la taxonomía es correcta con un comando.
+
+[.console-input]
+[source,bash]
+----
+ilab taxonomy diff
+----
+
+Deberías obtener lo siguiente:
+
+[source,bash]
+----
+Taxonomy in /taxonomy/ is valid :)
+----
+
+Hasta aquí todo bien. ¡Toca a pasar a la parte más divertida!
+
+Vamos a utilizar la taxonomía para que el LLM genere más ejemplos. Esto puede tardar un poco y depende del número de instrucciones que queramos generar. Para este workshop, pediremos que genere 5 muestras.
+
+Primero, necesitamos parar el servidor. En la pestaña del terminal en la que se está ejecutando, pulsa `CTRL`+`C`.
+
+
+[source,bash]
+----
+INFO 2024-05-06 18:41:08,496 server.py:197 After application startup complete see http://127.0.0.1:8000/docs for API.
+^C
+Aborted!
+----
+
+A continuación, usaremos Merlinite como modelo maestro a efectos de nuestra generación de datos sintéticos:
+
+[.console-input]
+[source,bash]
+----
+cd ~/instructlab
+cp ~/.cache/instructlab/models/merlinite-7b-lab-Q4_K_M.gguf  ~/instructlab/models
+ilab model serve --model-path models/merlinite-7b-lab-Q4_K_M.gguf
+----
+
+Ahora, volvemos a nuestra segunda pestaña del terminal y ejecutamos este comando:
+
+[.console-input]
+[source,bash]
+----
+ilab data generate --num-instructions 5
+----
+
+¡Y ahora sucede la magia! InstrucLab tardará unos minutos en generar los ejemplos.
+
+Realmente generar 5 ejemplos no es suficiente para impactar en el despempeño de un modelo. Debido a las limitaciones de tiempo, el objetivo es simplemente mostrarte el proceso utilizando comandos reales. Lo normal sería generar 100 o incluso 1000 datos adicionales. Red Hat proporciona herramientas como RHEL AI y OpenShift AI para entrenar LLMs de producción de forma efectiva.
+
+Una vez que haya terminado, ¡échale un vistazo a las preguntas y respuestas que ha generado en el terminal! El siguiente paso es entrenar el modelo con la habilidad actualizada. Esto se realiza con el comando `ilab train`. Sin embargo, no vamos a realizar el entrenamiento debido a limitaciones de tiempo. 
 
 [#interaccion]
-== 4. Interacción con el Modelo
+== 4. Modelo entrenado
 
-=== Iniciar una sesión interactiva
+Ya estamos listos para servir el nuevo modelo. Por cuestión de tiempo, serviremos un modelo preentrenado con 100 ejemplos en vez de 5, usando exactamente el mismo proceso que antes.
 
-Para comenzar una conversación con el modelo entrenado, usa el siguiente comando:
-
-[.console-input]
-[source,bash]
-----
-ilab model chat --model trained-model.pt
-----
-
-=== Evaluación de la salida
-
-El modelo responderá en tiempo real a las entradas proporcionadas. Puedes usarlo para probar cómo responde a diferentes tipos de preguntas.
-
-[#despliegue]
-== 5. Despliegue del Modelo
-
-=== Preparar el modelo para producción
-
-Una vez entrenado, el modelo debe ser empaquetado para su despliegue. Usa el siguiente comando para empaquetar el modelo:
+Vamos a la primera pestaña del terminal y dejamos de servir el modelo Merlinite usando `CTRL`+`C`. Luego, servimos el modelo preentrenado:
 
 [.console-input]
 [source,bash]
 ----
-ilab package --model trained-model.pt --output model-package.tar.gz
+ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf
 ----
 
-=== Desplegar el modelo
-
-El modelo empaquetado puede ser desplegado en servidores compatibles con InstructLab. Sube el archivo comprimido al servidor de producción y usa:
+Volvemos a la segunda pestaña del terminal e iniciamos el chat con el LLM.
 
 [.console-input]
 [source,bash]
 ----
-ilab deploy --package model-package.tar.gz --host production-server
+ilab model chat --greedy-mode -m models/ggml-ilab-pretrained-Q4_K_M.gguf
 ----
+
+¡Llega la hora de la verdad! Prueba a preguntar al LLM sobre InstructLab:
+
+[.console-input]
+[source,bash]
+----
+¿Qué es Instructlab?
+----
+
+¡Yuju! La respuesta debería ser mucho mejor que la última vez. El LLM debe ser capaz de describir a la perfección el proyecto InstructLab.
+
+== Conclusión
+
+*¡Laboratorio terminado con éxito!* Esperamos que hayas disfrutado probando de primera mano el potencial de InstructLab. Como pequeño repaso, has conseguido lo siguiente:
+
+* Chatear con un LLM
+* Crear ejemplos con un LLM para entrenar el modelo
+* Comprobar el desempeño del modelo entrenado
+
+Gracias por haber dedicado tu esfuerzo y tiempo en a aprender más sobre inteligencia articial y LLMs. Para más información sobre InstructLab, ¡echa un ojo a la comunidad en Github! https://github.com/instructlab
+
 
