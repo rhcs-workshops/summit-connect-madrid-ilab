@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-implementation.html</loc>
-<lastmod>2024-09-25T11:31:13.596Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/01-setup.html</loc>
+<lastmod>2024-09-25T13:55:06.414Z</lastmod>
 </url>
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-introduction.html</loc>
-<lastmod>2024-09-25T11:31:13.596Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/02-deploy.html</loc>
+<lastmod>2024-09-25T13:55:06.414Z</lastmod>
 </url>
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/02-annex.html</loc>
-<lastmod>2024-09-25T11:31:13.596Z</lastmod>
-</url>
-<url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/index.html</loc>
-<lastmod>2024-09-25T11:31:13.596Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/index.html</loc>
+<lastmod>2024-09-25T13:55:06.414Z</lastmod>
 </url>
 </urlset>
