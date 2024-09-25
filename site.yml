@@ -4,16 +4,13 @@ runtime:
 site:
   title: Summit Connect Madrid - InstructLab
   url: https://github.com/rhcs-workshops/summit-connect-madrid-ilab
-  start_page: redhat-workshop-ilab::index.adoc
+  start_page: template-tutorial::index.adoc
 
 content:
   sources:
-    #- url: ./
-    #  start_path: documentation
-    - url: git@github.com:rhcs-workshops/redhat-workshop-developer-hub-init.git
-      tags: []
-      branches: [master]
+    - url: ./
       start_path: documentation
+
 
 asciidoc:
   attributes:
