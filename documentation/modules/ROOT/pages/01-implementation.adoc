@@ -1,5 +1,6 @@
 = Guía del Laboratorio
 
+
 [#objetivos]
 == Objetivos del Laboratorio
 
