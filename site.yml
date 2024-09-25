@@ -4,11 +4,13 @@ runtime:
 site:
   title: Summit Connect Madrid - InstructLab
   url: https://github.com/rhcs-workshops/summit-connect-madrid-ilab
-  start_page: template-tutorial::index.adoc
+  start_page: summit-connect-madrid-ilab::index.adoc
 
 content:
   sources:
-    - url: ./
+    - url: ./git@github.com:rhcs-workshops/summit-connect-madrid-ilab.git
+      tags: []
+      branches: [master]
       start_path: documentation
 
 
@@ -23,6 +25,7 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/redhat-developer-demos/rhd-tutorial-ui/releases/download/v0.1.10/ui-bundle.zip
+    
     snapshot: true
   supplemental_files:
     - path: ./supplemental-ui
