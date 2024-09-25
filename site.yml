@@ -2,13 +2,17 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Template Tutorial
+  title: Summit Connect Madrid - InstructLab
   url: https://github.com/rhcs-workshops/summit-connect-madrid-ilab
-  start_page: template-tutorial::index.adoc
+  start_page: redhat-workshop-ilab::index.adoc
 
 content:
   sources:
-    - url: ./
+    #- url: ./
+    #  start_path: documentation
+    - url: git@github.com:rhcs-workshops/redhat-workshop-developer-hub-init.git
+      tags: []
+      branches: [master]
       start_path: documentation
 
 asciidoc:
