@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Introducción :: Summit Connect Madrid - InstructLab</title>
-    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/index.html">
-    <link rel="next" href="01-golden-path.html">
+    <title>Verificar pipeline de CI :: Summit Connect Madrid - InstructLab</title>
+    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/04-verificar-ci.html">
+    <link rel="prev" href="03-ci.html">
+    <link rel="next" href="05-dev-aplicacion.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -59,7 +60,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="03-ci.html">Continous Integration (CI)</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="04-verificar-ci.html">Verificar CI</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -79,44 +80,72 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Summit Connect Madrid - Developer Hub</a></li>
-    <li><a href="index.html">Introducción</a></li>
+    <li><a href="04-verificar-ci.html">Verificar CI</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/redhat-workshop-developer-hub-init/edit/master/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/redhat-workshop-developer-hub-init/edit/master/documentation/modules/ROOT/pages/04-verificar-ci.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Introducción</h1>
-<div class="paragraph">
-<p>Golden Paths son un concepto básico y fundamental en las plataformas de desarrollo interno (Internal Developer Platform - IDP) bien diseñadas.</p>
+<h1 class="page">Verificar pipeline de CI</h1>
+<div class="ulist">
+<ul>
+<li>
+<p>La pestaña CI te permite seguir el progreso de la build pipeline (proceso automatizado que compila, prueba y despliega aplicaciones desde el código fuente hasta producción) para el componente my-quarkus-app.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>La idea principal de este concepto es que la plataforma ofrece un modelo previamente diseñado y respaldado para crear e implementar un software en particular. Si un equipo puede trabajar en este modelo porque los requisitos así lo permiten, es entonces cuando se benefecia de este modelo previamente diseñado en su evolución hacia Producción sin necesidad de aprendizaje de los detalles de la tecnología que utiliza.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_8.png" alt="CI 8">
 </div>
-<div class="paragraph">
-<p>Este enfoque acelera los casos de uso típicos del desarrollo de aplicaciones (onboarding de un nuevo miembro del equipo, onboarding de una nueva aplicación), y al mismo tiempo incorpora las best-practices que se han aprendido en el pasado. Cuanto más sofisticado sea este Golden Path, se adoptará más, proporcionará una mayor uniformidad de configuración y comportamiento de todas las aplicaciones que lo utilicen.</p>
-</div>
-<div class="paragraph">
-<p>Dicho esto, ¿qué es un Golden Path? Un Golden Path tendrá, como mínimo, los siguientes ingredientes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Un repositorio que se puede utilizar como plantilla. Puede ser un simple <em>Hello World</em>, pero con las configuraciones básicas necesarias para que un desarrollador puede comenzar rápidamente con los IDEs de la compañía e incorporar las best-practices para el desarrollo del código de la aplicación.</p>
+<p>Observa cómo las medidas de seguridad están integradas en el proceso de compilación, de acuerdo con las políticas establecidas por el equipo de seguridad.</p>
 </li>
 <li>
-<p>Un pipeline que utilice el repositorio del desarrollador, construya, envíe y propague los artefactos entre los entornos hasta Producción. El pipeline tendrá todos los pasos necesarios por la organización para confíar plenamente en el código que se ha compilado y propagado entre los diferentes entornos.</p>
+<p>Estas medidas incluyen:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Análisis estático de código usando Sonarqube.</p>
 </li>
 <li>
-<p>Un conjunto de manifiestos declarativos para desplegar la aplicación. Pueden ser Helm charts, configuración de Kustomize, o cualquier otra forma de configuración descriptiva.</p>
+<p>Verifica que el último commit, el cual activó la pipeline, está digitalmente firmado por una fuente de confianza.</p>
 </li>
 <li>
-<p>Incorpora observabilidad. Observabilidad (logs, trazas, métricas y alertas) es una capacidad fundamental que debe proporcionar la plataforma. Se debe definir exactamente qué observar en una aplicación específica como parte del manifiesto de implementación. Un Golden Path debe proporcionar valores predeterminados razonables para las configuraciones de observabilidad.</p>
+<p>Generación de SBOM (Software Bill of Materials), para obtener información sobre la composición de la aplicación.</p>
+</li>
+<li>
+<p>Integración con ACS (Advanced Cluster Security) para escanear la imagen en busca de vulnerabilidades.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Como desarrollador, no tienes que preocuparte de estos aspectos complejos.</p>
+</li>
+<li>
+<p>Todos ellos están preparados mediante el Golden Path, lo que garantiza un proceso de desarrollo ágil y seguro.</p>
+</li>
+<li>
+<p>De hecho, incluso podríamos sustituir Tekton por otra herramienta de CI, ¡y no tendrías que preocuparte por los detalles!</p>
+</li>
+<li>
+<p>Una vez completada la ejecución de la build pipeline, revisamos el estado de nuestra aplicación.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_9.png" alt="CI 9">
+</div>
+</div>
 <nav class="pagination">
-  <span class="next"><a href="01-golden-path.html">Golden Path</a></span>
+  <span class="prev"><a href="03-ci.html">Continous Integration (CI)</a></span>
+  <span class="next"><a href="05-dev-aplicacion.html">Probar aplicación en desarrollo</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

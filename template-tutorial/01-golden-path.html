@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lanzando tu primera Golden Path Template (GPT) :: Summit Connect Madrid - InstructLab</title>
+    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/01-golden-path.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="02-explorar-aplicacion.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab">Summit Connect Madrid - InstructLab</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="template-tutorial" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="01-golden-path.html">Golden Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="02-explorar-aplicacion.html">Explorar aplicación</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="03-ci.html">Continous Integration (CI)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="04-verificar-ci.html">Verificar CI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="05-dev-aplicacion.html">Probar aplicación en desarrollo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Summit Connect Madrid - Developer Hub</a></li>
+    <li><a href="01-golden-path.html">Golden Path</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/redhat-workshop-developer-hub-init/edit/master/documentation/modules/ROOT/pages/01-golden-path.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Lanzando tu primera Golden Path Template (GPT)</h1>
+<div class="ulist">
+<ul>
+<li>
+<p>Como nuevo desarrollador, se te ha pedido crear un proyecto para implementar un servicio basado en Quarkus.</p>
+</li>
+<li>
+<p>Para hacerlo, vas a usar una Golden Path Template (GPT) preconfigurada, que agilizará tu proceso de incorporación al nuevo proyecto.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>La GPT creará dos repositorios en GitLab, uno para el código fuente de la aplicación y otro para los Manifiestos de Kubernetes.</p>
+</li>
+<li>
+<p>El siguiente paso en la GPT instruirá a ArgoCD para crear una aplicación y todos los recursos especificados en los Manifiestos en el clúster de OpenShift de destino.</p>
+</li>
+<li>
+<p>En este ejemplo, estamos utilizando Helm charts como entrada para desplegar con ArgoCD. Y un pipeline de CI en Tekton para compilar tu aplicación.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/GPT_Flow.png" alt="GPT Flow">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Para lanzar la GPT, haz clic en <strong>Crear</strong> en el menú lateral.</p>
+</li>
+<li>
+<p>Se te mostrarán todas las GPT que el equipo de Ingeniería de la Plataforma ha configurado para ti.</p>
+</li>
+<li>
+<p>Haz clic en el enlace <strong>Choose</strong> en la parte inferior derecha del recuadro "Quarkus Service with ArgoCD and a Tekton Pipeline" para seleccionar esta plantilla.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Choose_GPT.png" alt="Choose GPT">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A continuación, se te pedirá que completes un formulario simple con información básica.</p>
+</li>
+<li>
+<p>Modifica el <strong>Name</strong> con tu nombre y apellidos <strong>en minúscula</strong></p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Tu nombre y apellidos tiene que ser todo en minúscula
+</td>
+</tr>
+</table>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mantén el resto de valores por defecto y haz clic en <strong>Next</strong> para continuar.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/GPT_form_1.png" alt="GPT form 1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>En el segundo formulario, elije Quay para el Image Registry</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/GPT_form_2.png" alt="GPT form 2">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mantén el resto de valores por defecto y haz clic en <strong>Next</strong> para continuar.</p>
+</li>
+<li>
+<p>En el tercer y último formulario, verás valores predeterminados para el servidor Git que aloja el repositorio del código fuente de tu aplicación.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/GPT_form_3.png" alt="GPT form 3">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mantén los valores por defecto y haz clic en <strong>Review</strong> para continuar.</p>
+</li>
+<li>
+<p>Se te presentará un resumen. Ahora puedes revisar que todo esté en orden y luego hacer clic en el botón <strong>Create</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/GPT_form_4.png" alt="GPT form 4">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Después de hacer clic en el botón Create, Red Hat Developer Hub utilizará la información que has proporcionado para iniciar el proceso de configuración según lo descrito en la GPT seleccionada.</p>
+</li>
+<li>
+<p>También registrará tu aplicación en el Catálogo.</p>
+</li>
+<li>
+<p>Ahora, continúa haciendo clic en el enlace <strong>Open Component in catalog</strong>.</p>
+</li>
+</ul>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Summit Connect Madrid - Developer Hub</a></span>
+  <span class="next"><a href="02-explorar-aplicacion.html">Explorar aplicación</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

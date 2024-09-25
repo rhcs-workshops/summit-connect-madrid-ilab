@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Introducción :: Summit Connect Madrid - InstructLab</title>
-    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/index.html">
-    <link rel="next" href="01-golden-path.html">
+    <title>Probar aplicacion en desarrollo :: Summit Connect Madrid - InstructLab</title>
+    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/05-dev-aplicacion.html">
+    <link rel="prev" href="04-verificar-ci.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -62,7 +62,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="04-verificar-ci.html">Verificar CI</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="05-dev-aplicacion.html">Probar aplicación en desarrollo</a>
   </li>
 </ul>
@@ -79,44 +79,104 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Summit Connect Madrid - Developer Hub</a></li>
-    <li><a href="index.html">Introducción</a></li>
+    <li><a href="05-dev-aplicacion.html">Probar aplicación en desarrollo</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/redhat-workshop-developer-hub-init/edit/master/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/redhat-workshop-developer-hub-init/edit/master/documentation/modules/ROOT/pages/05-dev-aplicacion.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Introducción</h1>
-<div class="paragraph">
-<p>Golden Paths son un concepto básico y fundamental en las plataformas de desarrollo interno (Internal Developer Platform - IDP) bien diseñadas.</p>
+<h1 class="page">Probar aplicacion en desarrollo</h1>
+<div class="ulist">
+<ul>
+<li>
+<p>Cambia a la pestaña <strong>Topology</strong>, verás que el Pod está rodeado por un círculo azul, esto indica que se está ejecutando correctamente.</p>
+</li>
+<li>
+<p>Para abrir la aplicación, haz clic en el icono que se encuentra en la esquina derecha del Pod.</p>
+</li>
+<li>
+<p>Tu aplicación se abrirá en una nueva pestaña del navegador.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>La idea principal de este concepto es que la plataforma ofrece un modelo previamente diseñado y respaldado para crear e implementar un software en particular. Si un equipo puede trabajar en este modelo porque los requisitos así lo permiten, es entonces cuando se benefecia de este modelo previamente diseñado en su evolución hacia Producción sin necesidad de aprendizaje de los detalles de la tecnología que utiliza.</p>
-</div>
-<div class="paragraph">
-<p>Este enfoque acelera los casos de uso típicos del desarrollo de aplicaciones (onboarding de un nuevo miembro del equipo, onboarding de una nueva aplicación), y al mismo tiempo incorpora las best-practices que se han aprendido en el pasado. Cuanto más sofisticado sea este Golden Path, se adoptará más, proporcionará una mayor uniformidad de configuración y comportamiento de todas las aplicaciones que lo utilicen.</p>
-</div>
-<div class="paragraph">
-<p>Dicho esto, ¿qué es un Golden Path? Un Golden Path tendrá, como mínimo, los siguientes ingredientes:</p>
+<p><span class="image"><img src="_images/dev_1.png" alt="dev 1"></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Un repositorio que se puede utilizar como plantilla. Puede ser un simple <em>Hello World</em>, pero con las configuraciones básicas necesarias para que un desarrollador puede comenzar rápidamente con los IDEs de la compañía e incorporar las best-practices para el desarrollo del código de la aplicación.</p>
-</li>
-<li>
-<p>Un pipeline que utilice el repositorio del desarrollador, construya, envíe y propague los artefactos entre los entornos hasta Producción. El pipeline tendrá todos los pasos necesarios por la organización para confíar plenamente en el código que se ha compilado y propagado entre los diferentes entornos.</p>
-</li>
-<li>
-<p>Un conjunto de manifiestos declarativos para desplegar la aplicación. Pueden ser Helm charts, configuración de Kustomize, o cualquier otra forma de configuración descriptiva.</p>
-</li>
-<li>
-<p>Incorpora observabilidad. Observabilidad (logs, trazas, métricas y alertas) es una capacidad fundamental que debe proporcionar la plataforma. Se debe definir exactamente qué observar en una aplicación específica como parte del manifiesto de implementación. Un Golden Path debe proporcionar valores predeterminados razonables para las configuraciones de observabilidad.</p>
+<p>Prueba el cambio que has implementado haciendo clic en el link "hello"; deberías ver que la API devuelve "Hello from RHDH" como se esperaba.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dev_2.png" alt="dev 2">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ahora, cambia a la pestaña <strong>Overview</strong>.</p>
+</li>
+<li>
+<p>Aquí observarás que la aplicación está sincronizada y se encuentra en estado "healthy" en <strong>ArgoCD</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dev_3.png" alt="dev 3">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ve a la pestaña <strong>Image Registry</strong>.</p>
+</li>
+<li>
+<p>El <strong>Registry</strong> debería contener las imágenes.</p>
+</li>
+<li>
+<p>Puedes ver los resultados del escaneo de vulnerabilidades para la imagen taggeada como <strong>latest</strong> haciendo clic en el enlace que aparece en la columna <strong>Security Scan</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dev_4.png" alt="dev 4">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Esta sección mostrará todas las vulnerabilidades identificadas para la imagen, proporcionando más detalles de seguridad.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dev_5.png" alt="dev 5">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Por último, cambia a la pestaña <strong>Docs</strong>.</p>
+</li>
+<li>
+<p>Aquí puedes comprobar que la documentación ha sido actualizada con los cambios que has hecho.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dev_6.png" alt="dev 6">
+</div>
+</div>
 <nav class="pagination">
-  <span class="next"><a href="01-golden-path.html">Golden Path</a></span>
+  <span class="prev"><a href="04-verificar-ci.html">Verificar CI</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

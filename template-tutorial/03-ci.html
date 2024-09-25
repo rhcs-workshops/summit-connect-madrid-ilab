@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Realizar cambio en GitLab para lanzar al CI :: Summit Connect Madrid - InstructLab</title>
+    <link rel="canonical" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/03-ci.html">
+    <link rel="prev" href="02-explorar-aplicacion.html">
+    <link rel="next" href="04-verificar-ci.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab">Summit Connect Madrid - InstructLab</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="template-tutorial" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="01-golden-path.html">Golden Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="02-explorar-aplicacion.html">Explorar aplicación</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="03-ci.html">Continous Integration (CI)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="04-verificar-ci.html">Verificar CI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="05-dev-aplicacion.html">Probar aplicación en desarrollo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Summit Connect Madrid - Developer Hub</a></li>
+    <li><a href="03-ci.html">Continous Integration (CI)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/redhat-workshop-developer-hub-init/edit/master/documentation/modules/ROOT/pages/03-ci.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Realizar cambio en GitLab para lanzar al CI</h1>
+<div class="ulist">
+<ul>
+<li>
+<p>Comencemos por modificar el repositorio de la aplicación haciendo clic en <strong>View Source</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_1.png" alt="CI 1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Esto te llevará al repositorio de GitLab en una nueva pestaña.</p>
+</li>
+<li>
+<p>Para completar la tarea, vas a realiza tres cosas:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Actualizar el método Hello en la clase ExampleResource.java.class .</p>
+</li>
+<li>
+<p>Actualizar el test JUnit que verifica la salida de este método.</p>
+</li>
+<li>
+<p>Actualizar la documentación para reflejar el cambio.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>En tu repositorio <strong>my-quarkus-app</strong>, expande las carpetas <strong>src → main → java/org.redhat.janus</strong>, y luego abre el archivo <strong>ExampleResource.java</strong>.</p>
+</li>
+<li>
+<p>Pulsa en editar.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_2.png" alt="CI 2">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>En la línea 14, sustituye el mensaje del método hello de "Hello RESTEasy" por "Hello from RHDH".</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_3.png" alt="CI 3">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vamos a actualizar la documentación con este cambio. Introduce el mensaje de commit "Update my-quarkus-app" y haz clic en el botón <strong>Commit changes</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_4.png" alt="CI 4">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A continuación, actualiza el test JUnit para este método.</p>
+</li>
+<li>
+<p>Expande las carpetas <strong>src → test/java/org.redhat.janus</strong>, y abre el archivo <strong>ExampleResourceTest.java</strong>.</p>
+</li>
+<li>
+<p>Pulsa en editar.</p>
+</li>
+<li>
+<p>En la línea 18, cambia el texto "Hello RESTEasy" por "Hello from RHDH".</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_5.png" alt="CI 5">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>De nuevo, vamos a actualizar haciendo clic en el botón <strong>Commit changes</strong>.</p>
+</li>
+<li>
+<p>Por último, vamos a actualizar la documentación con nuestros últimos cambios.</p>
+</li>
+<li>
+<p>Desde el repositorio my-quarkus-app, despliega la carpeta docs y abre el archivo <strong>Index.md</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_6.png" alt="CI 6">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pulsa en editar.</p>
+</li>
+<li>
+<p>Al final del documento, añade el siguiente texto: "Release 1.0: Update to ExampleResource.hello() method to return 'Hello from RHDH'.".</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/CI_7.png" alt="CI 7">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Actualiza la documentación haciendo commit de nuevo. Haz clic en <strong>Commit changes</strong>.</p>
+</li>
+<li>
+<p>Ahora has implementado con éxito tu cambio y actualizado la documentación mediante un commit.</p>
+</li>
+<li>
+<p>Ese commit debería haber disparado la build pipeline para el componente my-quarkus-app a través del event trigger.</p>
+</li>
+<li>
+<p>Vuelve a la pestaña RHDH Dashboard de tu navegador y selecciona la pestaña <strong>CI</strong> del menú superior.</p>
+</li>
+</ul>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="02-explorar-aplicacion.html">Explorar aplicación</a></span>
+  <span class="next"><a href="04-verificar-ci.html">Verificar CI</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
