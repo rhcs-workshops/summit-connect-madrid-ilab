@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/01-golden-path.html</loc>
-<lastmod>2024-09-25T14:22:48.452Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-implementation.html</loc>
+<lastmod>2024-09-25T14:37:32.353Z</lastmod>
 </url>
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/02-explorar-aplicacion.html</loc>
-<lastmod>2024-09-25T14:22:48.452Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/01-introduction.html</loc>
+<lastmod>2024-09-25T14:37:32.353Z</lastmod>
 </url>
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/03-ci.html</loc>
-<lastmod>2024-09-25T14:22:48.452Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/02-annex.html</loc>
+<lastmod>2024-09-25T14:37:32.353Z</lastmod>
 </url>
 <url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/04-verificar-ci.html</loc>
-<lastmod>2024-09-25T14:22:48.452Z</lastmod>
-</url>
-<url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/05-dev-aplicacion.html</loc>
-<lastmod>2024-09-25T14:22:48.452Z</lastmod>
-</url>
-<url>
-<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/template-tutorial/index.html</loc>
-<lastmod>2024-09-25T14:22:48.452Z</lastmod>
+<loc>https://github.com/rhcs-workshops/summit-connect-madrid-ilab/instructlab/index.html</loc>
+<lastmod>2024-09-25T14:37:32.353Z</lastmod>
 </url>
 </urlset>
