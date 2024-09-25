@@ -8,7 +8,7 @@ site:
 
 content:
   sources:
-    - url: ./git@github.com:rhcs-workshops/summit-connect-madrid-ilab.git
+    - url: git@github.com:rhcs-workshops/summit-connect-madrid-ilab.git
       tags: []
       branches: [master]
       start_path: documentation
