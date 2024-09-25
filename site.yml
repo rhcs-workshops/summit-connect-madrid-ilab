@@ -4,7 +4,7 @@ runtime:
 site:
   title: Summit Connect Madrid - InstructLab
   url: https://github.com/rhcs-workshops/summit-connect-madrid-ilab
-  start_page: template-tutorial::index.adoc
+  start_page: instructlab::index.adoc
 
 content:
   sources:
