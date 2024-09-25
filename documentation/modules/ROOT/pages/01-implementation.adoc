@@ -1,45 +1,55 @@
 = Guía del Laboratorio
-include::_attributes.adoc[]
 
-[#instalacion]
-== 1. Instalación
+[#objetivos]
+== Objetivos del Laboratorio
 
-=== Requisitos del sistema
+*Instructlab* es una plataforma open-source que nos permite interactuar fácilmente con Modelos de Lenguaje Grandes (LLMs). En este laboratorio, vas a conseguir:
 
-* Python 3.9+
-* 60GB de espacio en disco
+1. Interactuar con un modelo
+2. Entrenar un modelo
+3. Comprobar modelo entrenado
 
-=== Instalar el entorno
+¡Vamos allá!
 
-Para comenzar, establecemos un entorno virtual de Python que nos permitirá interactuar con InstructLab. Luego, instalaremos InstructLab.
+[#uso-basico]
+== 1. Interactuar con un modelo
+
+=== Inicialización
+
+Para comenzar, establecemos un entorno virtual de Python con el CLI de InstructLab ya instalado.
 
 [.console-input]
 [source,bash]
 ----
 cd ~/instructlab
 source venv/bin/activate
-pip install git+https://github.com/instructlab/instructlab.git@v0.17.1
 ----
 
-¡Perfecto! Ya podemos usar InstructLab con el comando `ilab`.
+¡Perfecto! Ya podemos usar InstructLab con el comando `ilab`. Ahora InstructLab necesita *inicializar* para trabajar con los modelos. El comando `ilab config init` se encarga de:
 
-[#uso-basico]
-== 2. Uso básico
+* Localizar la taxonomía por defecto.
+* Crear el archivo de configuración (config.yaml).
 
-=== Inicialización
-
-Antes de usar un modelo, hay que establecer la inicialización. Durante esta fase ocurren varias cosas:
-
-* Se localiza una taxonomía por defecto en el sistema de archivos local.
-* Se crea un archivo de configuración (config.yaml) en el directorio actual.
-
-El archivo *config.yaml* contiene los valores predeterminados que utilizaremos. Estos nos permiten ajustar el comportamiento del modelo, por ejemplo que use un número determinado de CPUs.
+El archivo *config.yaml* contiene los valores predeterminados que nos permiten ajustar el comportamiento del modelo a nuestro gusto, como el número de CPUs.
 
 [.console-input]
 [source,bash]
 ----
 ilab config init
--> Presiona enter cuando el comando pida argumentos.
+----
+
+[.console-input]
+[source,bash]
+----
+Path to taxonomy repo [taxonomy]:
+-> Pulsa la tecla ENTER
+----
+
+[.console-input]
+[source,bash]
+----
+Path to your model [models/merlinite-7b-lab-Q4_K_M.gguf]:
+-> Pulsa la tecla ENTER
 ----
 
 El resultado final de ejecutar el comando es:
@@ -49,25 +59,14 @@ El resultado final de ejecutar el comando es:
 'Initialization completed successfully, you`re ready to start using ilab. Enjoy!'
 ----
 
-=== Descargar el modelo
+=== Descargar y servir modelo
 
-Con el entorno configurado, ahora podemos descargar un modelo comprimido y optimizado al directorio local para ser utilizado como un servidor.
+Con el entorno ya configurado, podemos descargar un modelo al directorio local y servirlo para interactuar con él.
 
 [.console-input]
 [source,bash]
 ----
 ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
-----
-
-El comando `ilab model download` descarga el modelo Granite 7b Lab desde los repositorios de HuggingFace. 
-
-=== Servir el modelo
-
-Ahora debemos servir el modelo para poder interactuar con él de forma muy parecida a como haríamos llamadas a una API.
-
-[.console-input]
-[source,bash]
-----
 ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
 ----
 
@@ -75,20 +74,13 @@ ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
 
 === Chatear con el modelo
 
-Vamos a dejar el modelo sirviendose en el terminal donde hemos trabajado y abriremos una nueva pestaña del terminal. Volveremos a activar el entorno virtual de Python.
+Vamos a dejar el modelo sirviéndose en el terminal donde hemos trabajado y usaremos *el segundo terminal*. Volvemos a activar el entorno virtual de Python, pero esta vez iniciamos una sesión de chat con el comando `ilab model chat`
 
 [.console-input]
 [source,bash]
 ----
 cd ~/instructlab
 source venv/bin/activate
-----
-
-Ya dentro del entorno, podemos iniciar una sesión de chat con el comando ilab chat:
-
-[.console-input]
-[source,bash]
-----
 ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf
 ----
 
@@ -102,33 +94,31 @@ En tu terminal debería aparecer:
 >>>
 ----
 
-Tenemos todo listo para hacerle preguntas a nuestro LLM. Prueba a escribir una pregunta: ¿Qué es Openshift en 20 palabras o menos?
+Tenemos todo listo para hacerle preguntas a nuestro LLM. Prueba a escribir:
 
 [.console-input]
 [source,bash]
 ----
-¿Qué es Openshift en 20 palabras o menos?
+Explica qué es Openshift
 ----
 
-¡Genial! Parece que el modelo funciona y es capaz de generar una respuesta a nuestras preguntas. 
+¡Genial! Parece que el modelo funciona y responde a nuestros mensajes. 
+
 
 [#entrenamiento]
-== 3. Entrenamiento del Modelo
+== 2. Entrenamiento del Modelo
 
-=== Preparar el entorno para el entrenamiento
-
-Vamos a probar con otra pregunta como: 
+Ahora, prueba a escribir en el chat: 
 
 [.console-input]
 [source,bash]
 ----
-¿Qué es InstructLab?
+Explica qué es InstructLab
 ----
 
-El modelo debería ser capaz de generar una respuesta que parece correcta, pero no lo es y se aleja mucho de la realidad.
-Estos errores suelen denominarse «alucinaciones». La alineación de modelos (como la que haremos ahora) es una forma de mejorar las respuestas de un modelo y evitar alucinaciones.
+El modelo debería ser capaz de generar una respuesta, pero se aleja mucho de la realidad. Este error se suele denominar «*alucinación*».
 
-Para solucionar esto, nos centraremos en añadir nuevo conocimiento al modelo para que sepa más sobre InstructLab. ¡Manos a la obra!
+Para solucionarlo, nos centraremos en *mejorar la taxonomía* añadiendo nuevo conocimiento al modelo y así sepa más sobre InstructLab. ¡Manos a la obra!
 
 Primero vamos a terminar la sesión de chat con el modelo. Escribe 'exit'.
 
@@ -138,27 +128,30 @@ Primero vamos a terminar la sesión de chat con el modelo. Escribe 'exit'.
 exit
 ----
 
-Ahora vamos a mejorar el modelo modificando su taxonomía.
-
 === Entender la taxonomía
 
 ¿Te has preguntado por qué InstructLab se llama así?
 
-El método LAB se basa en taxonomías.
-InstructLab facilita el proceso de ajuste y mejora de los modelos mediante la recopilación de dos tipos de datos: conocimientos y habilidades.
-La comunidad open-source sube aportaciones y se recogen en una taxonomía de archivos YAML. Esta se utiliza en el proceso de generación de datos sintéticos. 
-
+El *método LAB* se basa en taxonomías.
+Las taxonomías son archivos YAML que contienen conocimiento y habilidades que InstructLab usa para su generación de datos.
 
 Echémosle un ojo a la taxonomía actual.
 
-[.console-input]
 [source,bash]
 ----
-cd ~/instructlab
-tree taxonomy/ | head
+taxonomy/
+├── CODE_OF_CONDUCT.md
+├── compositional_skills
+│   ├── arts
+│   ├── engineering
+│   ├── geography
+│   ├── grounded
+│   │   ├── arts
+│   │   ├── engineering
+│   │   ├── geography
 ----
 
-Podemos ver que la taxonomía recoge conocimiento sobre artes, ingeniería, geografía... Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.
+Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.
 
 [.console-input]
 [source,bash]
@@ -174,15 +167,7 @@ Ahora incluiremos un archivo *qna.yaml*. Este contiene un cojunto de preguntas y
 cp -av ~/files/qna.yaml ~/instructlab/taxonomy/knowledge/instructlab/overview
 ----
 
-Para comprobar que hemos copiado el archivo correcto, prueba el siguiente comando:
-
-[.console-input]
-[source,bash]
-----
-head ~/instructlab/taxonomy/knowledge/instructlab/overview/qna.yaml
-----
-
-Si todo ha ido bien, deberías poder ver una pregunta y una respuesta. Con InstructLab, puedes comprobar que la estructura de la taxonomía es correcta con un comando.
+Con InstructLab, puedes comprobar que la estructura de la taxonomía es correcta con un comando.
 
 [.console-input]
 [source,bash]
@@ -236,7 +221,7 @@ Realmente generar 5 ejemplos no es suficiente para impactar en el despempeño de
 Una vez que haya terminado, ¡échale un vistazo a las preguntas y respuestas que ha generado en el terminal! El siguiente paso es entrenar el modelo con la habilidad actualizada. Esto se realiza con el comando `ilab train`. Sin embargo, no vamos a realizar el entrenamiento debido a limitaciones de tiempo. 
 
 [#interaccion]
-== 4. Modelo entrenado
+== 3. Comprobar modelo entrenado
 
 Ya estamos listos para servir el nuevo modelo. Por cuestión de tiempo, serviremos un modelo preentrenado con 100 ejemplos en vez de 5, usando exactamente el mismo proceso que antes.
 
