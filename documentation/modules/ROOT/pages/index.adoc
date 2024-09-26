@@ -1,27 +1,13 @@
-= Laboratorio de InstructLab: Introducción a la alineación de modelos LLM
-:page-layout: home
-:!sectids:
-include::_attributes.adoc[]
 
 
-Este laboratorio te guiará paso a paso en el uso de InstructLab para ajustar y desplegar Modelos de Lenguaje Grandes (LLM). A continuación, te proporcionamos una visión general de las principales secciones del laboratorio.
+[#objetivos]
+== Objetivos del Laboratorio
 
-[.tiles.browse]
-== Explorar módulos
+*InstructLab* es una plataforma open-source que nos permite interactuar fácilmente con Modelos de Lenguaje Grandes (LLMs). En este laboratorio, vas a conseguir:
 
+1. Interactuar con un modelo
+2. Entrenar un modelo
+3. Comprobar modelo entrenado
 
-[.tile]
-.xref:01-implementation.adoc#uso-basico[Interactuar con un modelo]
-* Inicializar y usar el modelo.
+Te guiaremos paso a paso para que veas el funcionamiento básico de instructLab. *¡Vamos allá!*
 
-[.tile]
-.xref:01-implementation.adoc#entrenamiento[Entrenar modelo]
-* Cómo entrenar y ajustar el modelo.
-
-[.tile]
-.xref:01-implementation.adoc#interaccion[Comprobar modelo entrenado]
-* Chatea con el modelo entrenado para comprobar el efecto de InstrucLab.
-
-[.tile]
-.xref:02-annex.adoc[Anexo]
-* Introducción a los LLMs y su entrenamiento.

@@ -1,6 +1,7 @@
-* xref:01-implementation.adoc[Guia del laboratorio]
-** xref:01-implementation.adoc#objetivos[Objetivos]
-** xref:01-implementation.adoc#uso-basico[1.Interactuar con un modelo]
+* xref:index.adoc[Objetivos]
+
+* xref:01-implementation.adoc[Laboratorio]
+** xref:01-implementation.adoc#uso-basico[1. Interactuar con un modelo]
 ** xref:01-implementation.adoc#entrenamiento[2. Entrenar modelo]
 ** xref:01-implementation.adoc#interaccion[3. Comprobar modelo entrenado]
 
