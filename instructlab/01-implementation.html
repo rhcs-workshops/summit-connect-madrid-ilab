@@ -117,7 +117,7 @@
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/instructlab
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/ilab
 source venv/bin/activate</code></pre>
 </div>
 </div>
@@ -164,13 +164,13 @@ source venv/bin/activate</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_descargar_y_servir_modelo"><a class="anchor" href="#_descargar_y_servir_modelo"></a>Descargar y servir modelo</h3>
+<h3 id="_servir_modelo"><a class="anchor" href="#_servir_modelo"></a>Servir modelo</h3>
 <div class="paragraph">
-<p>Con el entorno ya configurado, podemos descargar un modelo al directorio local y servirlo para interactuar con él.</p>
+<p>Con el entorno ya configurado, podemos descargar un modelo al directorio local y servirlo para interactuar con él. Por cuestión de tiempo, el modelo ya está descargado.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp ~/files/granite-7b-lab-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
 </div>
@@ -185,7 +185,7 @@ ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/instructlab
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/ilab
 source venv/bin/activate
 ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
@@ -271,7 +271,7 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p ~/instructlab/taxonomy/knowledge/instructlab/overview</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p ~/ilab/taxonomy/knowledge/instructlab/overview</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -291,7 +291,7 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp -av ~/files/qna.yaml ~/instructlab/taxonomy/knowledge/instructlab/overview</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp -av ~/files/qna.yaml ~/ilab/taxonomy/knowledge/instructlab/overview</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -317,50 +317,10 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 <div class="sect2">
 <h3 id="_entrenar_modelo"><a class="anchor" href="#_entrenar_modelo"></a>Entrenar modelo</h3>
 <div class="paragraph">
-<p>Entrenar lleva <strong>varias horas</strong> y por cuestión de tiempo, vamos a mostrarte cómo serían los pasos del entrenamiento. Más adelante usaremos un modelo ya entrenado, ¡como si fuera un programa de cocina!</p>
+<p>Entrenar lleva <strong>varias horas</strong> y por cuestión de tiempo, tenemos preparado un modelo ya entrenado. ¡Como si fuera un programa de cocina!</p>
 </div>
 <div class="paragraph">
-<p><strong>EN CONSTRUCCION</strong></p>
-</div>
-<div class="paragraph">
-<p>Vamos a utilizar la taxonomía para que el LLM genere más ejemplos. Esto puede tardar un poco y depende del número de instrucciones que queramos generar. Para este workshop, pediremos que genere 5 muestras.</p>
-</div>
-<div class="paragraph">
-<p>Primero, necesitamos parar el servidor. En la pestaña del terminal en la que se está ejecutando, pulsa <code>CTRL</code>+<code>C</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">INFO 2024-05-06 18:41:08,496 server.py:197 After application startup complete see http://127.0.0.1:8000/docs for API.
-^C
-Aborted!</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A continuación, usaremos Merlinite como modelo maestro a efectos de nuestra generación de datos sintéticos:</p>
-</div>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd ~/instructlab
-cp ~/.cache/instructlab/models/merlinite-7b-lab-Q4_K_M.gguf  ~/instructlab/models
-ilab model serve --model-path models/merlinite-7b-lab-Q4_K_M.gguf</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ahora, volvemos a nuestra segunda pestaña del terminal y ejecutamos este comando:</p>
-</div>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ilab data generate --num-instructions 5</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>¡Y ahora sucede la magia! InstrucLab tardará unos minutos en generar los ejemplos.</p>
-</div>
-<div class="paragraph">
-<p>Realmente generar 5 ejemplos no es suficiente para impactar en el despempeño de un modelo. Debido a las limitaciones de tiempo, el objetivo es simplemente mostrarte el proceso utilizando comandos reales. Lo normal sería generar 100 o incluso 1000 datos adicionales. Red Hat proporciona herramientas como RHEL AI y OpenShift AI para entrenar LLMs de producción de forma efectiva.</p>
-</div>
-<div class="paragraph">
-<p>Una vez que haya terminado, ¡échale un vistazo a las preguntas y respuestas que ha generado en el terminal! El siguiente paso es entrenar el modelo con la habilidad actualizada. Esto se realiza con el comando <code>ilab train</code>. Sin embargo, no vamos a realizar el entrenamiento debido a limitaciones de tiempo.</p>
+<p>En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomía que hemos definido para generar más ejemplos de preguntas y respuestas. Cuantas más preguntas y respuestas, más sólido será el entrenamiento. Después, entrenamos al modelo con ello. El resultado es un nuevo modelo que comprende el conocimiento que le hemos indicado.</p>
 </div>
 </div>
 </div>
@@ -369,10 +329,7 @@ ilab model serve --model-path models/merlinite-7b-lab-Q4_K_M.gguf</code></pre>
 <h2 id="interaccion"><a class="anchor" href="#interaccion"></a>3. Comprobar modelo entrenado</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ya estamos listos para servir el nuevo modelo. Por cuestión de tiempo, serviremos un modelo preentrenado con 100 ejemplos en vez de 5, usando exactamente el mismo proceso que antes.</p>
-</div>
-<div class="paragraph">
-<p>Vamos a la primera pestaña del terminal y dejamos de servir el modelo Merlinite usando <code>CTRL</code>+<code>C</code>.</p>
+<p>¡Hora de probar el modelo entrenado! Vamos a la primera pestaña del terminal y dejamos de servir el modelo antiguo usando <code>CTRL</code>+<code>C</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
