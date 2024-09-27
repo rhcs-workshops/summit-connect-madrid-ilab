@@ -10,7 +10,7 @@ Para comenzar, establecemos un entorno virtual de Python para usar el CLI de Ins
 [.console-input]
 [source,bash]
 ----
-cd ~/instructlab
+cd ~/ilab
 source venv/bin/activate
 ----
 
@@ -46,14 +46,14 @@ El resultado final de ejecutar el comando es:
 'Initialization completed successfully, you`re ready to start using ilab. Enjoy!'
 ----
 
-=== Descargar y servir modelo
+=== Servir modelo
 
-Con el entorno ya configurado, podemos descargar un modelo al directorio local y servirlo para interactuar con él.
+Con el entorno ya configurado, podemos descargar un modelo al directorio local y servirlo para interactuar con él. Por cuestión de tiempo, el modelo ya está descargado.
 
 [.console-input]
 [source,bash]
 ----
-ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
+cp ~/files/granite-7b-lab-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
 ----
 
@@ -66,7 +66,7 @@ Vamos a dejar el modelo sirviéndose en el terminal donde hemos trabajado y usar
 [.console-input]
 [source,bash]
 ----
-cd ~/instructlab
+cd ~/ilab
 source venv/bin/activate
 ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf
 ----
@@ -142,7 +142,7 @@ Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab
 [.console-input]
 [source,bash]
 ----
-mkdir -p ~/instructlab/taxonomy/knowledge/instructlab/overview
+mkdir -p ~/ilab/taxonomy/knowledge/instructlab/overview
 ----
 
 En el entorno, ya hay preparado un archivo *qna.yaml*. InstructLab usa estos archivos para enseñar a los modelos. Estos contienen preguntas y respuestas sobre algo en concreto. Aquí tienes un ejemplo:
@@ -161,7 +161,7 @@ Copiamos el archivo *qna.yaml* preparado en el directorio que hemos creado.
 [.console-input]
 [source,bash]
 ----
-cp -av ~/files/qna.yaml ~/instructlab/taxonomy/knowledge/instructlab/overview
+cp -av ~/files/qna.yaml ~/ilab/taxonomy/knowledge/instructlab/overview
 ----
 
 Para comprobar que hemos modificado correctamente la taxonomía, escribe el siguiente comando:
@@ -183,52 +183,14 @@ Taxonomy in /taxonomy/ is valid :)
 
 === Entrenar modelo
 
-Entrenar lleva *varias horas* y por cuestión de tiempo, vamos a mostrarte cómo serían los pasos del entrenamiento. Más adelante usaremos un modelo ya entrenado, ¡como si fuera un programa de cocina!
+Entrenar lleva *varias horas* y por cuestión de tiempo, tenemos preparado un modelo ya entrenado. ¡Como si fuera un programa de cocina!
 
-*EN CONSTRUCCION*
-
-Vamos a utilizar la taxonomía para que el LLM genere más ejemplos. Esto puede tardar un poco y depende del número de instrucciones que queramos generar. Para este workshop, pediremos que genere 5 muestras.
-
-Primero, necesitamos parar el servidor. En la pestaña del terminal en la que se está ejecutando, pulsa `CTRL`+`C`.
-
-
-[source,bash]
-----
-INFO 2024-05-06 18:41:08,496 server.py:197 After application startup complete see http://127.0.0.1:8000/docs for API.
-^C
-Aborted!
-----
-
-A continuación, usaremos Merlinite como modelo maestro a efectos de nuestra generación de datos sintéticos:
-
-[.console-input]
-[source,bash]
-----
-cd ~/instructlab
-cp ~/.cache/instructlab/models/merlinite-7b-lab-Q4_K_M.gguf  ~/instructlab/models
-ilab model serve --model-path models/merlinite-7b-lab-Q4_K_M.gguf
-----
-
-Ahora, volvemos a nuestra segunda pestaña del terminal y ejecutamos este comando:
-
-[.console-input]
-[source,bash]
-----
-ilab data generate --num-instructions 5
-----
-
-¡Y ahora sucede la magia! InstrucLab tardará unos minutos en generar los ejemplos.
-
-Realmente generar 5 ejemplos no es suficiente para impactar en el despempeño de un modelo. Debido a las limitaciones de tiempo, el objetivo es simplemente mostrarte el proceso utilizando comandos reales. Lo normal sería generar 100 o incluso 1000 datos adicionales. Red Hat proporciona herramientas como RHEL AI y OpenShift AI para entrenar LLMs de producción de forma efectiva.
-
-Una vez que haya terminado, ¡échale un vistazo a las preguntas y respuestas que ha generado en el terminal! El siguiente paso es entrenar el modelo con la habilidad actualizada. Esto se realiza con el comando `ilab train`. Sin embargo, no vamos a realizar el entrenamiento debido a limitaciones de tiempo. 
+En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomía que hemos definido para generar más ejemplos de preguntas y respuestas. Cuantas más preguntas y respuestas, más sólido será el entrenamiento. Después, entrenamos al modelo con ello. El resultado es un nuevo modelo que comprende el conocimiento que le hemos indicado.
 
 [#interaccion]
 == 3. Comprobar modelo entrenado
 
-Ya estamos listos para servir el nuevo modelo. Por cuestión de tiempo, serviremos un modelo preentrenado con 100 ejemplos en vez de 5, usando exactamente el mismo proceso que antes.
-
-Vamos a la primera pestaña del terminal y dejamos de servir el modelo Merlinite usando `CTRL`+`C`. 
+¡Hora de probar el modelo entrenado! Vamos a la primera pestaña del terminal y dejamos de servir el modelo antiguo usando `CTRL`+`C`. 
 
 [source,bash]
 ----
