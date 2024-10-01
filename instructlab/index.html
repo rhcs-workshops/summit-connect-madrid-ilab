@@ -50,8 +50,11 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="index.html">Objetivos</a>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#instructlab">¿Qué es InstructLab?</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#objetivos">Objetivos</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
@@ -98,34 +101,56 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">InstructLab</a></li>
-    <li><a href="index.html">Objetivos</a></li>
+    <li><a href="#instructlab">¿Qué es InstructLab?</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/rhcs-workshops/summit-connect-madrid-ilab/edit/master/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
+<div class="imageblock">
+<div class="content">
+<img src="_images/instructlab-banner.png" alt="instructlab banner">
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructlab"><a class="anchor" href="#instructlab"></a>¿Qué es InstructLab y cómo funciona?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>InstructLab es una plataforma open-source que nos permite trabajar fácilmente con Modelos de Lenguaje Grandes (LLMs): descargar y servir modelos, chatear con ellos, entrenarlos&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo</strong>: Queremos tener un modelo especializado en un área en específico, en este caso sobre ornitorrincos. No somos expertos en redes de neuronas, y nos sería complicado ponernos a ello desde cero. Por suerte, InstructLab está diseñado para que cualquiera pueda hacerlo.</p>
+</div>
+<div class="paragraph">
+<p>El proceso es muy fácil. Descargamos un modelo base que no sabe nada del tema. InstructLab usa una taxonomía, una estructura de conocimientos y habilidades que podemos modificar a nuestro gusto. Añadimos el conocimiento sobre ornitorrincos en un archivo qna.yaml que contiene preguntas respondidas sobre el tema.</p>
+</div>
+<div class="paragraph">
+<p>InstructLab se encarga de generar nuevas preguntas y respuestas a partir de la taxonomía y un modelo maestro. Finalmente, se entrena al modelo base y es capaz de responder nuestras preguntas sobre ornitorrincos.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="objetivos"><a class="anchor" href="#objetivos"></a>Objetivos del Laboratorio</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>InstructLab</strong> es una plataforma open-source que nos permite interactuar fácilmente con Modelos de Lenguaje Grandes (LLMs). En este laboratorio, vas a conseguir:</p>
+<p>En este laboratorio, vamos a:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Interactuar con un modelo</p>
+<p><strong>Interactuar con un modelo</strong>. Iniciaremos InstructLab y interactuaremos mediante un chat.</p>
 </li>
 <li>
-<p>Entrenar un modelo</p>
+<p><strong>Entrenar un modelo</strong>. Usaremos el potencial de InstructLab, las taxonomías.</p>
 </li>
 <li>
-<p>Comprobar modelo entrenado</p>
+<p><strong>Comprobar modelo entrenado</strong>. Chatearemos con el modelo entrenado para ver los resultados.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Te guiaremos paso a paso para que veas el funcionamiento básico de instructLab. <strong>¡Vamos allá!</strong></p>
+<p>Te guiaremos paso a paso para que veas el funcionamiento básico de InstructLab. <strong>¡Vamos allá!</strong></p>
 </div>
 </div>
 </div>
