@@ -1,4 +1,6 @@
-* xref:index.adoc[Objetivos]
+* xref:index.adoc#instructlab[¿Qué es InstructLab?]
+* xref:index.adoc#objetivos[Objetivos]
+
 
 * xref:01-implementation.adoc[Laboratorio]
 ** xref:01-implementation.adoc#uso-basico[1. Interactuar con un modelo]

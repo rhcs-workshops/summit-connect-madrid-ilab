@@ -1,13 +1,28 @@
 
 
+
+image::instructlab-banner.png[]
+
+[#instructlab]
+== ¿Qué es InstructLab y cómo funciona?
+
+InstructLab es una plataforma open-source que nos permite trabajar fácilmente con Modelos de Lenguaje Grandes (LLMs): descargar y servir modelos, chatear con ellos, entrenarlos...
+
+*Ejemplo*: Queremos tener un modelo especializado en un área en específico, en este caso sobre ornitorrincos. No somos expertos en redes de neuronas, y nos sería complicado ponernos a ello desde cero. Por suerte, InstructLab está diseñado para que cualquiera pueda hacerlo.
+
+El proceso es muy fácil. Descargamos un modelo base que no sabe nada del tema. InstructLab usa una taxonomía, una estructura de conocimientos y habilidades que podemos modificar a nuestro gusto. Añadimos el conocimiento sobre ornitorrincos en un archivo qna.yaml que contiene preguntas respondidas sobre el tema.
+
+InstructLab se encarga de generar nuevas preguntas y respuestas a partir de la taxonomía y un modelo maestro. Finalmente, se entrena al modelo base y es capaz de responder nuestras preguntas sobre ornitorrincos.
+
 [#objetivos]
+
 == Objetivos del Laboratorio
 
-*InstructLab* es una plataforma open-source que nos permite interactuar fácilmente con Modelos de Lenguaje Grandes (LLMs). En este laboratorio, vas a conseguir:
+En este laboratorio, vamos a:
 
-1. Interactuar con un modelo
-2. Entrenar un modelo
-3. Comprobar modelo entrenado
+1. *Interactuar con un modelo*. Iniciaremos InstructLab y interactuaremos mediante un chat.
+2. *Entrenar un modelo*. Usaremos el potencial de InstructLab, las taxonomías.
+3. *Comprobar modelo entrenado*. Chatearemos con el modelo entrenado para ver los resultados.
 
-Te guiaremos paso a paso para que veas el funcionamiento básico de instructLab. *¡Vamos allá!*
+Te guiaremos paso a paso para que veas el funcionamiento básico de InstructLab. *¡Vamos allá!*
 
