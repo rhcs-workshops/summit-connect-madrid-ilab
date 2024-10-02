@@ -217,6 +217,7 @@ Luego, servimos el modelo preentrenado:
 [.console-input]
 [source,bash]
 ----
+cp ~/files/ggml-ilab-pretrained-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf
 ----
 
