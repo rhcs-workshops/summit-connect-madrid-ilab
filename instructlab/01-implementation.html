@@ -173,7 +173,8 @@ source venv/bin/activate</code></pre>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp ~/files/granite-7b-lab-Q4_K_M.gguf ~/ilab/models
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p ~/ilab/models
+cp ~/files/granite-7b-lab-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
 </div>
@@ -255,6 +256,11 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 <div class="paragraph">
 <p>Echémosle un ojo a la taxonomía actual.</p>
 </div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tree ~/ilab/taxonomy/</code></pre>
+</div>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">taxonomy/
@@ -294,7 +300,7 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp -av ~/files/qna.yaml ~/ilab/taxonomy/knowledge/instructlab/overview</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp ~/files/qna.yml ~/ilab/taxonomy/knowledge/instructlab/overview</code></pre>
 </div>
 </div>
 <div class="paragraph">
