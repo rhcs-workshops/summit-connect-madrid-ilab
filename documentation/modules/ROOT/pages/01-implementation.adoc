@@ -35,6 +35,12 @@ Path to taxonomy repo [taxonomy]:
 
 [source,bash]
 ----
+'taxonomy seems to not exist' Should I clone?
+-> Pulsa la tecla Y
+----
+
+[source,bash]
+----
 Path to your model [models/merlinite-7b-lab-Q4_K_M.gguf]:
 -> Pulsa la tecla ENTER
 ----
