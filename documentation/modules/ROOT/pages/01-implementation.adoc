@@ -55,6 +55,7 @@ Con el entorno ya configurado, podemos descargar un modelo al directorio local y
 ----
 mkdir -p ~/ilab/models
 cp ~/files/granite-7b-lab-Q4_K_M.gguf ~/ilab/models
+cp ~/files/merlinite-7b-lab-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
 ----
 
@@ -212,7 +213,6 @@ Luego, servimos el modelo preentrenado:
 [source,bash]
 ----
 cp ~/files/ggml-ilab-pretrained-Q4_K_M.gguf ~/ilab/models
-cp ~/files/merlinite-7b-lab-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf
 ----
 
