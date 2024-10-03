@@ -5,7 +5,7 @@
 
 === Preparación del entorno
 
-Para comenzar, establecemos un entorno virtual de Python para usar el CLI de InstructLab ya instalado.
+Comenzamos en el #terminal azul#. Vamos a establecer un entorno virtual de Python para usar el CLI de InstructLab ya instalado.
 
 [.console-input]
 [source,bash]
@@ -35,14 +35,8 @@ Path to taxonomy repo [taxonomy]:
 
 [source,bash]
 ----
-'taxonomy seems to not exist' Should I clone?
--> Pulsa la tecla Y
-----
-
-[source,bash]
-----
-Path to your model [models/merlinite-7b-lab-Q4_K_M.gguf]:
--> Pulsa la tecla ENTER
+'taxonomy' seems to not exist or is empty. Should I clone?
+-> Pulsa la tecla Y, después ENTER
 ----
 
 El resultado final de ejecutar el comando es:
@@ -68,7 +62,7 @@ ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
 
 === Chatear con el modelo
 
-Vamos a dejar el modelo sirviéndose en el terminal donde hemos trabajado y usaremos *el segundo terminal*. Volvemos a activar el entorno virtual de Python, pero esta vez iniciamos una sesión de chat con el comando `ilab model chat`
+Vamos a dejar el modelo sirviéndose en el terminal donde hemos trabajado y usaremos el #terminal blanco#. Volvemos a activar el entorno virtual de Python, pero esta vez iniciamos una sesión de chat con el comando `ilab model chat`
 
 [.console-input]
 [source,bash]
@@ -93,20 +87,20 @@ Tenemos todo listo para hacerle preguntas a nuestro LLM. Prueba a escribir:
 [.console-input]
 [source,bash]
 ----
-Explica qué es Openshift
+What is Openshift?
 ----
 
-¡Genial! Parece que el modelo funciona y responde a nuestros mensajes. 
+¡Genial! El modelo debería responder que Openshift es una plataforma de conterización desarrollada por Red Hat. 
 
 Ahora, prueba a escribir en el chat: 
 
 [.console-input]
 [source,bash]
 ----
-Explica qué es InstructLab
+What is InstructLab?
 ----
 
-El modelo debería ser capaz de generar una respuesta, pero se aleja mucho de la realidad. Este error se suele denominar «*alucinación*» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!
+Vaya. El modelo responde que InstructLab es una plataforma educativa, algo que no es cierto y se aleja de la realidad. Este error se suele denominar «*alucinación*» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!
 
 [#entrenamiento]
 == 2. Entrenamiento del Modelo
@@ -125,8 +119,8 @@ exit
 
 ¿Te has preguntado por qué InstructLab se llama así?
 
-El *método LAB* se basa en taxonomías.
-Las taxonomías son archivos YAML que contienen conocimiento y habilidades que InstructLab usa para su generación de datos.
+El *método LAB* (**L**arge-scale **A**lignment for chat**B**ots) se basa en taxonomías.
+Las taxonomías son archivos YAML que contienen conocimientos y habilidades que InstructLab usa para su generación de datos.
 
 Echémosle un ojo a la taxonomía actual.
 
@@ -150,7 +144,7 @@ taxonomy/
 │   │   ├── geography
 ----
 
-Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.
+Vemos que la taxonomía incluye conocimiento sobre artes, ingeniería, geografía... Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.
 
 [.console-input]
 [source,bash]
@@ -203,7 +197,7 @@ En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomí
 [#interaccion]
 == 3. Comprobar modelo entrenado
 
-¡Hora de probar el modelo entrenado! Vamos a la primera pestaña del terminal y dejamos de servir el modelo antiguo usando `CTRL`+`C`. 
+¡Hora de probar el modelo entrenado! Vamos al #terminal azul# y dejamos de servir el modelo antiguo usando `CTRL`+`C`. 
 
 [source,bash]
 ----
@@ -221,7 +215,7 @@ cp ~/files/ggml-ilab-pretrained-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf
 ----
 
-Volvemos a la segunda pestaña del terminal e iniciamos el chat con el LLM.
+Volvemos al #terminal blanco# e iniciamos el chat con el LLM.
 
 [.console-input]
 [source,bash]
@@ -234,17 +228,17 @@ ilab model chat --greedy-mode -m models/ggml-ilab-pretrained-Q4_K_M.gguf
 [.console-input]
 [source,bash]
 ----
-¿Qué es Instructlab?
+What is InstructLab?
 ----
 
-¡Yuju! La respuesta debería ser mucho mejor que la última vez. El LLM debe ser capaz de describir a la perfección el proyecto InstructLab.
+¡Yuju! La respuesta debería ser mucho mejor que la última vez. El LLM debe ser capaz de explicar que InstructLab.
 
 == Conclusión
 
 *¡Laboratorio terminado con éxito!* Esperamos que hayas disfrutado probando de primera mano el potencial de InstructLab. Como pequeño repaso, has conseguido lo siguiente:
 
 * Chatear con un LLM
-* Crear ejemplos con un LLM para entrenar el modelo
+* Modificar la taxonomía de InstructLab
 * Comprobar el desempeño del modelo entrenado
 
 Gracias por haber dedicado tu esfuerzo y tiempo en a aprender más sobre inteligencia articial y LLMs. Para más información sobre InstructLab, ¡echa un ojo a la comunidad en Github! https://github.com/instructlab
