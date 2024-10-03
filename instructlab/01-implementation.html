@@ -116,7 +116,7 @@
 <div class="sect2">
 <h3 id="_preparación_del_entorno"><a class="anchor" href="#_preparación_del_entorno"></a>Preparación del entorno</h3>
 <div class="paragraph">
-<p>Para comenzar, establecemos un entorno virtual de Python para usar el CLI de InstructLab ya instalado.</p>
+<p>Comenzamos en el <mark>terminal azul</mark>. Vamos a establecer un entorno virtual de Python para usar el CLI de InstructLab ya instalado.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -153,14 +153,8 @@ source venv/bin/activate</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">'taxonomy seems to not exist' Should I clone?
--&gt; Pulsa la tecla Y</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Path to your model [models/merlinite-7b-lab-Q4_K_M.gguf]:
--&gt; Pulsa la tecla ENTER</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">'taxonomy' seems to not exist or is empty. Should I clone?
+-&gt; Pulsa la tecla Y, después ENTER</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -191,7 +185,7 @@ ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 <div class="sect2">
 <h3 id="_chatear_con_el_modelo"><a class="anchor" href="#_chatear_con_el_modelo"></a>Chatear con el modelo</h3>
 <div class="paragraph">
-<p>Vamos a dejar el modelo sirviéndose en el terminal donde hemos trabajado y usaremos <strong>el segundo terminal</strong>. Volvemos a activar el entorno virtual de Python, pero esta vez iniciamos una sesión de chat con el comando <code>ilab model chat</code></p>
+<p>Vamos a dejar el modelo sirviéndose en el terminal donde hemos trabajado y usaremos el <mark>terminal blanco</mark>. Volvemos a activar el entorno virtual de Python, pero esta vez iniciamos una sesión de chat con el comando <code>ilab model chat</code></p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -216,22 +210,22 @@ ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Explica qué es Openshift</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">What is Openshift?</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>¡Genial! Parece que el modelo funciona y responde a nuestros mensajes.</p>
+<p>¡Genial! El modelo debería responder que Openshift es una plataforma de conterización desarrollada por Red Hat.</p>
 </div>
 <div class="paragraph">
 <p>Ahora, prueba a escribir en el chat:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Explica qué es InstructLab</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">What is InstructLab?</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>El modelo debería ser capaz de generar una respuesta, pero se aleja mucho de la realidad. Este error se suele denominar «<strong>alucinación</strong>» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!</p>
+<p>Vaya. El modelo responde que InstructLab es una plataforma educativa, algo que no es cierto y se aleja de la realidad. Este error se suele denominar «<strong>alucinación</strong>» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!</p>
 </div>
 </div>
 </div>
@@ -256,8 +250,8 @@ ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 <p>¿Te has preguntado por qué InstructLab se llama así?</p>
 </div>
 <div class="paragraph">
-<p>El <strong>método LAB</strong> se basa en taxonomías.
-Las taxonomías son archivos YAML que contienen conocimiento y habilidades que InstructLab usa para su generación de datos.</p>
+<p>El <strong>método LAB</strong> (<strong>L</strong>arge-scale <strong>A</strong>lignment for chat<strong>B</strong>ots) se basa en taxonomías.
+Las taxonomías son archivos YAML que contienen conocimientos y habilidades que InstructLab usa para su generación de datos.</p>
 </div>
 <div class="paragraph">
 <p>Echémosle un ojo a la taxonomía actual.</p>
@@ -282,7 +276,7 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 </div>
 </div>
 <div class="paragraph">
-<p>Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.</p>
+<p>Vemos que la taxonomía incluye conocimiento sobre artes, ingeniería, geografía&#8230;&#8203; Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -344,7 +338,7 @@ Las taxonomías son archivos YAML que contienen conocimiento y habilidades que I
 <h2 id="interaccion"><a class="anchor" href="#interaccion"></a>3. Comprobar modelo entrenado</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>¡Hora de probar el modelo entrenado! Vamos a la primera pestaña del terminal y dejamos de servir el modelo antiguo usando <code>CTRL</code>+<code>C</code>.</p>
+<p>¡Hora de probar el modelo entrenado! Vamos al <mark>terminal azul</mark> y dejamos de servir el modelo antiguo usando <code>CTRL</code>+<code>C</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -363,7 +357,7 @@ ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf</code></pr
 </div>
 </div>
 <div class="paragraph">
-<p>Volvemos a la segunda pestaña del terminal e iniciamos el chat con el LLM.</p>
+<p>Volvemos al <mark>terminal blanco</mark> e iniciamos el chat con el LLM.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -375,11 +369,11 @@ ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf</code></pr
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">¿Qué es Instructlab?</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">What is InstructLab?</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>¡Yuju! La respuesta debería ser mucho mejor que la última vez. El LLM debe ser capaz de describir a la perfección el proyecto InstructLab.</p>
+<p>¡Yuju! La respuesta debería ser mucho mejor que la última vez. El LLM debe ser capaz de explicar que InstructLab.</p>
 </div>
 </div>
 </div>
@@ -395,7 +389,7 @@ ilab model serve --model-path models/ggml-ilab-pretrained-Q4_K_M.gguf</code></pr
 <p>Chatear con un LLM</p>
 </li>
 <li>
-<p>Crear ejemplos con un LLM para entrenar el modelo</p>
+<p>Modificar la taxonomía de InstructLab</p>
 </li>
 <li>
 <p>Comprobar el desempeño del modelo entrenado</p>
