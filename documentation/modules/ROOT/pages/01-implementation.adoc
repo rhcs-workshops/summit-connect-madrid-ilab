@@ -125,12 +125,6 @@ Las taxonomías son archivos YAML que contienen conocimientos y habilidades que 
 
 Echémosle un ojo a la taxonomía actual.
 
-[.console-input]
-[source,bash]
-----
-tree ~/ilab/taxonomy/
-----
-
 [source,bash]
 ----
 taxonomy/
