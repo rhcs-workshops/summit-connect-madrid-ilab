@@ -103,18 +103,18 @@ What is InstructLab?
 
 Vaya. El modelo responde que InstructLab es una plataforma educativa, algo que no es cierto y se aleja de la realidad. Este error se suele denominar «*alucinación*» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!
 
-[#entrenamiento]
-== 2. Entrenamiento del Modelo
-
-Usaremos el potencial de InstructLab, centrándonos en *mejorar la taxonomía*. Añadiremos conocimiento sobre InstructLab al modelo para que sepa más del proyecto y pueda responder a nuestras preguntas. 
-
-Primero vamos a terminar la sesión de chat con el modelo. Escribe 'exit'.
+Antes de continuar, vamos a cerrar la sesión de chat con el modelo. Escribe 'exit'. 
 
 [.console-input]
 [source,bash]
 ----
 exit
 ----
+
+[#entrenamiento]
+== 2. Entrenamiento del Modelo
+
+Una vez que conocemos un poco acerca de IntructLab, vamos a usar su potencial, centrándonos en *mejorar la taxonomía*. Añadiremos conocimiento sobre InstructLab al modelo para que sepa más del proyecto y pueda responder a nuestras preguntas. 
 
 === Entender la taxonomía
 
@@ -139,7 +139,7 @@ taxonomy/
 │   │   ├── geography
 ----
 
-Vemos que la taxonomía incluye conocimiento sobre artes, ingeniería, geografía... Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.
+Vemos que la taxonomía incluye conocimiento sobre artes, ingeniería, geografía... Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab. Aún en el #terminal blanco#, introducimos el siguiente comando:
 
 [.console-input]
 [source,bash]
@@ -187,7 +187,7 @@ Taxonomy in /taxonomy/ is valid :)
 
 Entrenar lleva *varias horas* y por cuestión de tiempo, tenemos preparado un modelo ya entrenado. ¡Como si fuera un programa de cocina!
 
-En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomía que hemos definido para generar más ejemplos de preguntas y respuestas. Cuantas más preguntas y respuestas, más sólido será el entrenamiento. Después, entrenamos al modelo con ello. El resultado es un nuevo modelo que comprende el conocimiento que le hemos indicado.
+En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomía que hemos definido para generar más ejemplos de preguntas y respuestas. Después, entrenaremos al modelo con ellos. Cuantas más preguntas y respuestas, más sólido será el entrenamiento. El resultado será un nuevo modelo que comprenda el conocimiento que le hemos indicado.
 
 [#interaccion]
 == 3. Comprobar modelo entrenado
