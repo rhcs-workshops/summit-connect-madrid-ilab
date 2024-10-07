@@ -228,6 +228,14 @@ ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 <div class="paragraph">
 <p>Vaya. El modelo responde que InstructLab es una plataforma educativa, algo que no es cierto y se aleja de la realidad. Este error se suele denominar «<strong>alucinación</strong>» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!</p>
 </div>
+<div class="paragraph">
+<p>Antes de continuar, vamos a cerrar la sesión de chat con el modelo. Escribe 'exit'.</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">exit</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -235,15 +243,7 @@ ilab model chat -m models/granite-7b-lab-Q4_K_M.gguf</code></pre>
 <h2 id="entrenamiento"><a class="anchor" href="#entrenamiento"></a>2. Entrenamiento del Modelo</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Usaremos el potencial de InstructLab, centrándonos en <strong>mejorar la taxonomía</strong>. Añadiremos conocimiento sobre InstructLab al modelo para que sepa más del proyecto y pueda responder a nuestras preguntas.</p>
-</div>
-<div class="paragraph">
-<p>Primero vamos a terminar la sesión de chat con el modelo. Escribe 'exit'.</p>
-</div>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">exit</code></pre>
-</div>
+<p>Una vez que conocemos un poco acerca de IntructLab, vamos a usar su potencial, centrándonos en <strong>mejorar la taxonomía</strong>. Añadiremos conocimiento sobre InstructLab al modelo para que sepa más del proyecto y pueda responder a nuestras preguntas.</p>
 </div>
 <div class="sect2">
 <h3 id="_entender_la_taxonomía"><a class="anchor" href="#_entender_la_taxonomía"></a>Entender la taxonomía</h3>
@@ -272,7 +272,7 @@ Las taxonomías son archivos YAML que contienen conocimientos y habilidades que 
 </div>
 </div>
 <div class="paragraph">
-<p>Vemos que la taxonomía incluye conocimiento sobre artes, ingeniería, geografía&#8230;&#8203; Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab.</p>
+<p>Vemos que la taxonomía incluye conocimiento sobre artes, ingeniería, geografía&#8230;&#8203; Vamos a crear un directorio en el que insertar el conocimiento sobre InstructLab. Aún en el <mark>terminal blanco</mark>, introducimos el siguiente comando:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -325,7 +325,7 @@ Las taxonomías son archivos YAML que contienen conocimientos y habilidades que 
 <p>Entrenar lleva <strong>varias horas</strong> y por cuestión de tiempo, tenemos preparado un modelo ya entrenado. ¡Como si fuera un programa de cocina!</p>
 </div>
 <div class="paragraph">
-<p>En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomía que hemos definido para generar más ejemplos de preguntas y respuestas. Cuantas más preguntas y respuestas, más sólido será el entrenamiento. Después, entrenamos al modelo con ello. El resultado es un nuevo modelo que comprende el conocimiento que le hemos indicado.</p>
+<p>En el entrenamiento, un modelo maestro (Merlinite en este caso) usa la taxonomía que hemos definido para generar más ejemplos de preguntas y respuestas. Después, entrenaremos al modelo con ellos. Cuantas más preguntas y respuestas, más sólido será el entrenamiento. El resultado será un nuevo modelo que comprenda el conocimiento que le hemos indicado.</p>
 </div>
 </div>
 </div>
