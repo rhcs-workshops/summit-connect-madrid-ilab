@@ -103,7 +103,7 @@ What is InstructLab?
 
 Vaya. El modelo responde que InstructLab es una plataforma educativa, algo que no es cierto y se aleja de la realidad. Este error se suele denominar «*alucinación*» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!
 
-Antes de continuar, vamos a cerrar la sesión de chat con el modelo. Escribe 'exit'. 
+Antes de continuar, vamos a cerrar la sesión de chat con el modelo que hemos iniciado en el #terminal blanco#. Escribe 'exit'. 
 
 [.console-input]
 [source,bash]
