@@ -62,8 +62,7 @@ Espera a que el output de la consola azul muestre el siguiente mensaje:
 
 [source,bash]
 ----
-...
-After application startup complete see http://127.0.0.1:8000/docs for API.
+INFO ... After application startup complete see http://127.0.0.1:8000/docs for API.
 ----
 
 ¡Genial! Estamos listos para probar el LLM.
