@@ -58,7 +58,7 @@ cp ~/files/granite-7b-lab-Q4_K_M.gguf ~/ilab/models
 cp ~/files/merlinite-7b-lab-Q4_K_M.gguf ~/ilab/models
 ilab model serve --model-path models/granite-7b-lab-Q4_K_M.gguf
 ----
-Espera a que el output de la consola azul muestre el siguiente mensaje:
+Espera a que el output del terminal azul muestre el siguiente mensaje:
 
 [source,bash]
 ----
