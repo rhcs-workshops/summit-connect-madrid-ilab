@@ -94,7 +94,7 @@ Tenemos todo listo para hacerle preguntas a nuestro LLM. Prueba a escribir:
 [.console-input]
 [source,bash]
 ----
-What is Openshift?
+Can you give me a short summary of what Openshift is?
 ----
 
 ¡Genial! El modelo debería responder que Openshift es una plataforma de conterización desarrollada por Red Hat. 
@@ -104,7 +104,7 @@ Ahora, prueba a escribir en el chat:
 [.console-input]
 [source,bash]
 ----
-What is InstructLab?
+Can you give me a short summary of what InstructLab is?
 ----
 
 Vaya. El modelo responde que InstructLab es una plataforma educativa, algo que no es cierto y se aleja de la realidad. Este error se suele denominar «*alucinación*» en el mundo de la IA. Para solucionarlo, toca pasar por el entrenamiento. ¡Manos a la obra!
@@ -229,7 +229,7 @@ ilab model chat --greedy-mode -m models/ggml-ilab-pretrained-Q4_K_M.gguf
 [.console-input]
 [source,bash]
 ----
-What is InstructLab?
+Can you give me a short summary of what InstructLab is?
 ----
 
 ¡Yuju! La respuesta debería ser mucho mejor que la última vez. El LLM debe ser capaz de explicar que InstructLab.
